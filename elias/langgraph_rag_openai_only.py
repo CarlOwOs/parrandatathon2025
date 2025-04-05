@@ -2,6 +2,8 @@ import os
 from typing import List, TypedDict
 from dotenv import load_dotenv
 import chromadb
+import argparse
+import pandas as pd
 from langgraph.graph import StateGraph
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
@@ -41,18 +43,8 @@ def retrieve_docs(state: AgentState) -> AgentState:
         print(f"Error getting collection: {e}")
         raise
     
-    # Reformulate the query to be more explicit
-    reformulation_prompt = ChatPromptTemplate.from_messages([
-        ("system", """You are a query reformulation expert. Your task is to make the query more explicit and detailed 
-        for better document retrieval. Keep the core meaning but make it more specific about what information is being sought.
-        Return only the reformulated query, nothing else."""),
-        ("human", "Original query: {query}")
-    ])
-    
-    reformulated_query = (reformulation_prompt | llm).invoke({"query": state["query"]}).content
-    
-    # Get embeddings for the reformulated query
-    query_embedding = embeddings.embed_query(reformulated_query)
+    # Get embeddings for the query
+    query_embedding = embeddings.embed_query(state["query"])
     
     # Search for relevant documents
     results = collection.query(
@@ -127,9 +119,32 @@ def run_rag(query: str, system_prompt: str) -> str:
 
 # Example usage
 if __name__ == "__main__":
-    query = "Give me the companies based in Spain"
-    print(f"Query: {query}")
-    system_prompt = "You are a helpful assistant that answers questions based on the provided context."
+    # parser = argparse.ArgumentParser()
+    # parser.add_argument("--query", type=str, default="I want to send cows from california to texas. Give me companies that can transport animals in the US?")
+    # args = parser.parse_args()
+    # query = args.query
+    # print(f"Query: {query}")
+    # system_prompt = "You are a helpful assistant that answers questions based on the provided context. Be concise and clear in your responses. \
+    #     Please only answer questions that are related to the context provided. \
+    #     Plase provide the snippet of the context that is most relevant to the question. \
+    #     "
     
-    response = run_rag(query, system_prompt)
-    print(response) 
+    # response = run_rag(query, system_prompt)
+    # print(response)
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dataset", type=str, default="supply_chain_questions.csv")
+    args = parser.parse_args()
+    dataset = pd.read_csv(args.dataset)
+    recalls = []
+    for index, row in dataset.iterrows():
+        company_url = row["company_url"].split("/")[-1]
+        query = row["question"]
+        system_prompt = "You are a helpful assistant that answers questions based on the provided context. Be concise and clear in your responses. \
+            Please only answer with information related to the context provided. \
+            Answer with the company url, followed by a comma, then the company name and then a snippet of the context that is most relevant to the question.  \
+            "
+        response = run_rag(query, system_prompt)
+        print(company_url, response)
+        recalls.append(company_url in response)
+        print(sum(recalls) / len(recalls))

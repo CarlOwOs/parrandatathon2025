@@ -4,5 +4,6 @@ data*
 .DS_Store
 .pycache*
 *.lock
-
-__pycache__
+wetransfer*
+chromas
+home_chroma_db_hf

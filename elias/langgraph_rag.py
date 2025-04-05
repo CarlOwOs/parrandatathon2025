@@ -5,25 +5,30 @@ import chromadb
 from langgraph.graph import StateGraph
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from sentence_transformers import SentenceTransformer
 
 # Load environment variables
 load_dotenv()
 
-# Initialize ChromaDB
-chroma_client = chromadb.PersistentClient(
+# Initialize ChromaDB clients for both knowledge bases
+chroma_client_openai = chromadb.PersistentClient(
     path="chromas/home_chroma_db_openai",
 )
+chroma_client_hf = chromadb.PersistentClient(
+    path="chromas/home_chroma_db_hf",
+)
 
-# Initialize OpenAI models
+# Initialize models
 llm = ChatOpenAI(
     model="gpt-4o-mini",
     temperature=0.7,
     api_key=os.getenv("OPENAI_API_KEY")
 )
-embeddings = OpenAIEmbeddings(
+embeddings_openai = OpenAIEmbeddings(
     model="text-embedding-3-small",
     api_key=os.getenv("OPENAI_API_KEY")
 )
+embeddings_hf = SentenceTransformer('sentence-transformers/all-MiniLM-L6-v2')
 
 # Define the state
 class AgentState(TypedDict):
@@ -34,36 +39,37 @@ class AgentState(TypedDict):
 
 # Define the nodes
 def retrieve_docs(state: AgentState) -> AgentState:
-    """Retrieve relevant documents from ChromaDB."""
+    """Retrieve relevant documents from both ChromaDB collections."""
     try:
-        collection = chroma_client.get_collection(name="home_embedding_db")
+        collection_openai = chroma_client_openai.get_collection(name="home_embedding_db")
+        collection_hf = chroma_client_hf.get_collection(name="home_embedding_db_hf")
     except Exception as e:
-        print(f"Error getting collection: {e}")
+        print(f"Error getting collections: {e}")
         raise
     
-    # Reformulate the query to be more explicit
-    reformulation_prompt = ChatPromptTemplate.from_messages([
-        ("system", """You are a query reformulation expert. Your task is to make the query more explicit and detailed 
-        for better document retrieval. Keep the core meaning but make it more specific about what information is being sought.
-        Return only the reformulated query, nothing else."""),
-        ("human", "Original query: {query}")
-    ])
+    # Get embeddings for the query using appropriate models
+    query_embedding_openai = embeddings_openai.embed_query(state["query"])
+    query_embedding_hf = embeddings_hf.encode(state["query"]).tolist()
     
-    reformulated_query = (reformulation_prompt | llm).invoke({"query": state["query"]}).content
-    
-    # Get embeddings for the reformulated query
-    query_embedding = embeddings.embed_query(reformulated_query)
-    
-    # Search for relevant documents
-    results = collection.query(
-        query_embeddings=[query_embedding],
-        n_results=10
+    # Search for relevant documents from both collections
+    results_openai = collection_openai.query(
+        query_embeddings=[query_embedding_openai],
+        n_results=5  # Get 5 results from each collection
     )
     
-    # Extract document texts
-    retrieved_docs = results["documents"][0] if results["documents"] else []
+    results_hf = collection_hf.query(
+        query_embeddings=[query_embedding_hf],
+        n_results=5
+    )
     
-    return {**state, "retrieved_docs": retrieved_docs}
+    # Extract document texts from both collections
+    retrieved_docs_openai = results_openai["documents"][0] if results_openai["documents"] else []
+    retrieved_docs_hf = results_hf["documents"][0] if results_hf["documents"] else []
+    
+    # Combine and deduplicate documents
+    all_docs = list(set(retrieved_docs_openai + retrieved_docs_hf))
+    
+    return {**state, "retrieved_docs": all_docs}
 
 def generate_response(state: AgentState) -> AgentState:
     """Generate response using the retrieved documents."""
@@ -71,7 +77,8 @@ def generate_response(state: AgentState) -> AgentState:
     prompt = ChatPromptTemplate.from_messages([
         ("system", state["system_prompt"]),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("human", """Answer the following question using the provided context.
+        ("human", """Answer the following question using the provided context. 
+        The context comes from multiple knowledge bases, so make sure to synthesize information from all sources.
         
         Question: {query}
         
@@ -127,9 +134,11 @@ def run_rag(query: str, system_prompt: str) -> str:
 
 # Example usage
 if __name__ == "__main__":
-    query = "Give me the companies based in Spain"
+    query = "What companies operate in california and use Agile techniques?"
     print(f"Query: {query}")
-    system_prompt = "You are a helpful assistant that answers questions based on the provided context."
+    system_prompt = """You are a helpful assistant that answers questions based on the provided context. 
+    The context comes from multiple knowledge bases, so make sure to synthesize information from all sources.
+    Be concise and clear in your responses."""
     
     response = run_rag(query, system_prompt)
-    print(response) 
+    print(response)
