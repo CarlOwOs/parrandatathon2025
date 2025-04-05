@@ -1,0 +1,801 @@
+2025-04-05 23:08:54,133 - INFO - Starting keyword clustering process
+2025-04-05 23:08:54,133 - INFO - Input folder: data/keywords
+2025-04-05 23:08:54,133 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:08:54,133 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:08:54,155 - INFO - Loaded 4 keywords for category: industries
+2025-04-05 23:08:54,155 - INFO - Loaded 5 keywords for category: services
+2025-04-05 23:08:54,155 - INFO - Loaded 0 keywords for category: materials
+2025-04-05 23:08:54,155 - INFO - Loaded 0 keywords for category: products
+2025-04-05 23:08:54,155 - INFO - Loaded 2 keywords for category: technology
+2025-04-05 23:08:54,155 - INFO - Loaded 1 keywords for category: logistics
+2025-04-05 23:08:54,155 - INFO - Loaded 0 keywords for category: procurement
+2025-04-05 23:08:54,155 - INFO - Loaded 1 keywords for category: city
+2025-04-05 23:08:54,155 - INFO - Loaded 1 keywords for category: country
+2025-04-05 23:08:54,155 - INFO - Loaded 1 keywords for category: continent
+2025-04-05 23:08:54,155 - INFO - Loaded 0 keywords for category: capacity risk
+2025-04-05 23:08:54,155 - INFO - Loaded 0 keywords for category: geopolitical risk
+2025-04-05 23:08:56,581 - INFO - Starting keyword clustering process
+2025-04-05 23:08:56,581 - INFO - Processing category: industries
+2025-04-05 23:08:56,581 - INFO - Clustering 4 keywords into 4 clusters for category: industries
+2025-04-05 23:08:56,581 - INFO - Found 4 representative keywords for category: industries
+2025-04-05 23:08:56,581 - INFO - Processing category: services
+2025-04-05 23:08:56,581 - INFO - Clustering 5 keywords into 5 clusters for category: services
+2025-04-05 23:08:56,581 - INFO - Found 5 representative keywords for category: services
+2025-04-05 23:08:56,581 - INFO - Processing category: materials
+2025-04-05 23:08:56,581 - INFO - Clustering 0 keywords into 0 clusters for category: materials
+2025-04-05 23:08:56,582 - INFO - Found 0 representative keywords for category: materials
+2025-04-05 23:08:56,582 - INFO - Processing category: products
+2025-04-05 23:08:56,582 - INFO - Clustering 0 keywords into 0 clusters for category: products
+2025-04-05 23:08:56,582 - INFO - Found 0 representative keywords for category: products
+2025-04-05 23:08:56,582 - INFO - Processing category: technology
+2025-04-05 23:08:56,582 - INFO - Clustering 2 keywords into 2 clusters for category: technology
+2025-04-05 23:08:56,582 - INFO - Found 2 representative keywords for category: technology
+2025-04-05 23:08:56,582 - INFO - Processing category: logistics
+2025-04-05 23:08:56,582 - INFO - Clustering 1 keywords into 1 clusters for category: logistics
+2025-04-05 23:08:56,582 - INFO - Found 1 representative keywords for category: logistics
+2025-04-05 23:08:56,582 - INFO - Processing category: procurement
+2025-04-05 23:08:56,582 - INFO - Clustering 0 keywords into 0 clusters for category: procurement
+2025-04-05 23:08:56,582 - INFO - Found 0 representative keywords for category: procurement
+2025-04-05 23:08:56,582 - INFO - Processing category: city
+2025-04-05 23:08:56,582 - INFO - Skipping clustering for category: city
+2025-04-05 23:08:56,582 - INFO - Processing category: country
+2025-04-05 23:08:56,582 - INFO - Skipping clustering for category: country
+2025-04-05 23:08:56,582 - INFO - Processing category: continent
+2025-04-05 23:08:56,582 - INFO - Skipping clustering for category: continent
+2025-04-05 23:08:56,582 - INFO - Processing category: capacity risk
+2025-04-05 23:08:56,582 - INFO - Clustering 0 keywords into 0 clusters for category: capacity risk
+2025-04-05 23:08:56,582 - INFO - Found 0 representative keywords for category: capacity risk
+2025-04-05 23:08:56,582 - INFO - Processing category: geopolitical risk
+2025-04-05 23:08:56,582 - INFO - Clustering 0 keywords into 0 clusters for category: geopolitical risk
+2025-04-05 23:08:56,582 - INFO - Found 0 representative keywords for category: geopolitical risk
+2025-04-05 23:10:22,309 - INFO - Starting keyword clustering process
+2025-04-05 23:10:22,309 - INFO - Input folder: data/keywords
+2025-04-05 23:10:22,309 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:10:22,309 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:10:22,322 - INFO - Loaded 4 keywords for category: industries
+2025-04-05 23:10:22,322 - INFO - Loaded 5 keywords for category: services
+2025-04-05 23:10:22,322 - INFO - Loaded 0 keywords for category: materials
+2025-04-05 23:10:22,322 - INFO - Loaded 0 keywords for category: products
+2025-04-05 23:10:22,322 - INFO - Loaded 2 keywords for category: technology
+2025-04-05 23:10:22,322 - INFO - Loaded 1 keywords for category: logistics
+2025-04-05 23:10:22,322 - INFO - Loaded 0 keywords for category: procurement
+2025-04-05 23:10:22,322 - INFO - Loaded 1 keywords for category: city
+2025-04-05 23:10:22,322 - INFO - Loaded 1 keywords for category: country
+2025-04-05 23:10:22,322 - INFO - Loaded 1 keywords for category: continent
+2025-04-05 23:10:22,322 - INFO - Loaded 0 keywords for category: capacity risk
+2025-04-05 23:10:22,322 - INFO - Loaded 0 keywords for category: geopolitical risk
+2025-04-05 23:10:22,903 - INFO - Starting keyword clustering process
+2025-04-05 23:10:22,903 - INFO - Processing category: industries
+2025-04-05 23:10:22,903 - INFO - Clustering 4 keywords into 4 clusters for category: industries
+2025-04-05 23:10:22,903 - INFO - Found 4 representative keywords for category: industries
+2025-04-05 23:10:22,903 - INFO - Cluster labels: [0, 1, 2, 3]
+2025-04-05 23:10:22,903 - INFO - Processing category: services
+2025-04-05 23:10:22,903 - INFO - Clustering 5 keywords into 5 clusters for category: services
+2025-04-05 23:10:22,903 - INFO - Found 5 representative keywords for category: services
+2025-04-05 23:10:22,903 - INFO - Cluster labels: [0, 1, 2, 3, 4]
+2025-04-05 23:10:22,903 - INFO - Processing category: materials
+2025-04-05 23:10:22,903 - INFO - Clustering 0 keywords into 0 clusters for category: materials
+2025-04-05 23:10:22,903 - INFO - Found 0 representative keywords for category: materials
+2025-04-05 23:10:22,903 - INFO - Cluster labels: []
+2025-04-05 23:10:22,903 - INFO - Processing category: products
+2025-04-05 23:10:22,903 - INFO - Clustering 0 keywords into 0 clusters for category: products
+2025-04-05 23:10:22,903 - INFO - Found 0 representative keywords for category: products
+2025-04-05 23:10:22,903 - INFO - Cluster labels: []
+2025-04-05 23:10:22,903 - INFO - Processing category: technology
+2025-04-05 23:10:22,903 - INFO - Clustering 2 keywords into 2 clusters for category: technology
+2025-04-05 23:10:22,903 - INFO - Found 2 representative keywords for category: technology
+2025-04-05 23:10:22,903 - INFO - Cluster labels: [0, 1]
+2025-04-05 23:10:22,903 - INFO - Processing category: logistics
+2025-04-05 23:10:22,903 - INFO - Clustering 1 keywords into 1 clusters for category: logistics
+2025-04-05 23:10:22,903 - INFO - Found 1 representative keywords for category: logistics
+2025-04-05 23:10:22,903 - INFO - Cluster labels: [0]
+2025-04-05 23:10:22,903 - INFO - Processing category: procurement
+2025-04-05 23:10:22,903 - INFO - Clustering 0 keywords into 0 clusters for category: procurement
+2025-04-05 23:10:22,903 - INFO - Found 0 representative keywords for category: procurement
+2025-04-05 23:10:22,903 - INFO - Cluster labels: []
+2025-04-05 23:10:22,903 - INFO - Processing category: city
+2025-04-05 23:10:22,903 - INFO - Skipping clustering for category: city
+2025-04-05 23:10:22,903 - INFO - Processing category: country
+2025-04-05 23:10:22,903 - INFO - Skipping clustering for category: country
+2025-04-05 23:10:22,903 - INFO - Processing category: continent
+2025-04-05 23:10:22,903 - INFO - Skipping clustering for category: continent
+2025-04-05 23:10:22,903 - INFO - Processing category: capacity risk
+2025-04-05 23:10:22,903 - INFO - Clustering 0 keywords into 0 clusters for category: capacity risk
+2025-04-05 23:10:22,903 - INFO - Found 0 representative keywords for category: capacity risk
+2025-04-05 23:10:22,903 - INFO - Cluster labels: []
+2025-04-05 23:10:22,903 - INFO - Processing category: geopolitical risk
+2025-04-05 23:10:22,903 - INFO - Clustering 0 keywords into 0 clusters for category: geopolitical risk
+2025-04-05 23:10:22,903 - INFO - Found 0 representative keywords for category: geopolitical risk
+2025-04-05 23:10:22,903 - INFO - Cluster labels: []
+2025-04-05 23:12:22,611 - INFO - Starting keyword clustering process
+2025-04-05 23:12:22,611 - INFO - Input folder: data/keywords
+2025-04-05 23:12:22,611 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:12:22,612 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:12:22,630 - INFO - Loaded 4 keywords for category: industries
+2025-04-05 23:12:22,630 - INFO - Loaded 5 keywords for category: services
+2025-04-05 23:12:22,630 - INFO - Loaded 0 keywords for category: materials
+2025-04-05 23:12:22,630 - INFO - Loaded 0 keywords for category: products
+2025-04-05 23:12:22,630 - INFO - Loaded 2 keywords for category: technology
+2025-04-05 23:12:22,630 - INFO - Loaded 1 keywords for category: logistics
+2025-04-05 23:12:22,630 - INFO - Loaded 0 keywords for category: procurement
+2025-04-05 23:12:22,630 - INFO - Loaded 1 keywords for category: city
+2025-04-05 23:12:22,630 - INFO - Loaded 1 keywords for category: country
+2025-04-05 23:12:22,630 - INFO - Loaded 1 keywords for category: continent
+2025-04-05 23:12:22,630 - INFO - Loaded 0 keywords for category: capacity risk
+2025-04-05 23:12:22,630 - INFO - Loaded 0 keywords for category: geopolitical risk
+2025-04-05 23:12:23,179 - INFO - Starting keyword clustering process
+2025-04-05 23:12:23,179 - INFO - Processing category: industries
+2025-04-05 23:12:23,179 - INFO - Clustering 4 keywords into 4 clusters for category: industries
+2025-04-05 23:12:23,179 - INFO - Found 4 representative keywords for category: industries
+2025-04-05 23:12:23,179 - INFO - Cluster labels: [0, 1, 2, 3]
+2025-04-05 23:12:23,179 - INFO - Processing category: services
+2025-04-05 23:12:23,179 - INFO - Clustering 5 keywords into 5 clusters for category: services
+2025-04-05 23:12:23,179 - INFO - Found 5 representative keywords for category: services
+2025-04-05 23:12:23,179 - INFO - Cluster labels: [0, 1, 2, 3, 4]
+2025-04-05 23:12:23,179 - INFO - Processing category: materials
+2025-04-05 23:12:23,179 - INFO - Clustering 0 keywords into 0 clusters for category: materials
+2025-04-05 23:12:23,179 - INFO - Found 0 representative keywords for category: materials
+2025-04-05 23:12:23,179 - INFO - Cluster labels: []
+2025-04-05 23:12:23,179 - INFO - Processing category: products
+2025-04-05 23:12:23,179 - INFO - Clustering 0 keywords into 0 clusters for category: products
+2025-04-05 23:12:23,179 - INFO - Found 0 representative keywords for category: products
+2025-04-05 23:12:23,179 - INFO - Cluster labels: []
+2025-04-05 23:12:23,179 - INFO - Processing category: technology
+2025-04-05 23:12:23,179 - INFO - Clustering 2 keywords into 2 clusters for category: technology
+2025-04-05 23:12:23,179 - INFO - Found 2 representative keywords for category: technology
+2025-04-05 23:12:23,179 - INFO - Cluster labels: [0, 1]
+2025-04-05 23:12:23,179 - INFO - Processing category: logistics
+2025-04-05 23:12:23,179 - INFO - Clustering 1 keywords into 1 clusters for category: logistics
+2025-04-05 23:12:23,179 - INFO - Found 1 representative keywords for category: logistics
+2025-04-05 23:12:23,179 - INFO - Cluster labels: [0]
+2025-04-05 23:12:23,179 - INFO - Processing category: procurement
+2025-04-05 23:12:23,179 - INFO - Clustering 0 keywords into 0 clusters for category: procurement
+2025-04-05 23:12:23,179 - INFO - Found 0 representative keywords for category: procurement
+2025-04-05 23:12:23,179 - INFO - Cluster labels: []
+2025-04-05 23:12:23,179 - INFO - Processing category: city
+2025-04-05 23:12:23,179 - INFO - Skipping clustering for category: city
+2025-04-05 23:12:23,179 - INFO - Processing category: country
+2025-04-05 23:12:23,179 - INFO - Skipping clustering for category: country
+2025-04-05 23:12:23,179 - INFO - Processing category: continent
+2025-04-05 23:12:23,179 - INFO - Skipping clustering for category: continent
+2025-04-05 23:12:23,179 - INFO - Processing category: capacity risk
+2025-04-05 23:12:23,179 - INFO - Clustering 0 keywords into 0 clusters for category: capacity risk
+2025-04-05 23:12:23,179 - INFO - Found 0 representative keywords for category: capacity risk
+2025-04-05 23:12:23,179 - INFO - Cluster labels: []
+2025-04-05 23:12:23,179 - INFO - Processing category: geopolitical risk
+2025-04-05 23:12:23,179 - INFO - Clustering 0 keywords into 0 clusters for category: geopolitical risk
+2025-04-05 23:12:23,179 - INFO - Found 0 representative keywords for category: geopolitical risk
+2025-04-05 23:12:23,179 - INFO - Cluster labels: []
+2025-04-05 23:14:45,392 - INFO - Starting keyword clustering process
+2025-04-05 23:14:45,392 - INFO - Input folder: data/keywords
+2025-04-05 23:14:45,392 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:14:45,392 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:14:45,399 - INFO - Loaded 4 keywords for category: industries
+2025-04-05 23:14:45,399 - INFO - Loaded 5 keywords for category: services
+2025-04-05 23:14:45,399 - INFO - Loaded 0 keywords for category: materials
+2025-04-05 23:14:45,399 - INFO - Loaded 0 keywords for category: products
+2025-04-05 23:14:45,399 - INFO - Loaded 2 keywords for category: technology
+2025-04-05 23:14:45,399 - INFO - Loaded 1 keywords for category: logistics
+2025-04-05 23:14:45,399 - INFO - Loaded 0 keywords for category: procurement
+2025-04-05 23:14:45,399 - INFO - Loaded 1 keywords for category: city
+2025-04-05 23:14:45,399 - INFO - Loaded 1 keywords for category: country
+2025-04-05 23:14:45,399 - INFO - Loaded 1 keywords for category: continent
+2025-04-05 23:14:45,399 - INFO - Loaded 0 keywords for category: capacity risk
+2025-04-05 23:14:45,399 - INFO - Loaded 0 keywords for category: geopolitical risk
+2025-04-05 23:14:46,139 - INFO - Starting keyword clustering process
+2025-04-05 23:14:46,139 - INFO - Processing category: industries
+2025-04-05 23:14:46,139 - INFO - Clustering 4 keywords into 4 clusters for category: industries
+2025-04-05 23:14:46,139 - INFO - Found 4 representative keywords for category: industries
+2025-04-05 23:14:46,139 - INFO - Representative keywords: ['event management', 'hospitality', 'catering', 'convention services']
+2025-04-05 23:14:46,139 - INFO - Processing category: services
+2025-04-05 23:14:46,139 - INFO - Clustering 5 keywords into 5 clusters for category: services
+2025-04-05 23:14:46,139 - INFO - Found 5 representative keywords for category: services
+2025-04-05 23:14:46,139 - INFO - Representative keywords: ['production & audio visual', 'public safety & fire management', 'in booth food & beverage services', 'in booth telecom/internet services', 'general service contractors']
+2025-04-05 23:14:46,139 - INFO - Processing category: materials
+2025-04-05 23:14:46,139 - INFO - Clustering 0 keywords into 0 clusters for category: materials
+2025-04-05 23:14:46,139 - INFO - Found 0 representative keywords for category: materials
+2025-04-05 23:14:46,139 - INFO - Representative keywords: []
+2025-04-05 23:14:46,139 - INFO - Processing category: products
+2025-04-05 23:14:46,139 - INFO - Clustering 0 keywords into 0 clusters for category: products
+2025-04-05 23:14:46,139 - INFO - Found 0 representative keywords for category: products
+2025-04-05 23:14:46,139 - INFO - Representative keywords: []
+2025-04-05 23:14:46,139 - INFO - Processing category: technology
+2025-04-05 23:14:46,139 - INFO - Clustering 2 keywords into 2 clusters for category: technology
+2025-04-05 23:14:46,139 - INFO - Found 2 representative keywords for category: technology
+2025-04-05 23:14:46,139 - INFO - Representative keywords: ['telecom', 'internet services']
+2025-04-05 23:14:46,139 - INFO - Processing category: logistics
+2025-04-05 23:14:46,139 - INFO - Clustering 1 keywords into 1 clusters for category: logistics
+2025-04-05 23:14:46,139 - INFO - Found 1 representative keywords for category: logistics
+2025-04-05 23:14:46,139 - INFO - Representative keywords: ['freight deliveries']
+2025-04-05 23:14:46,139 - INFO - Processing category: procurement
+2025-04-05 23:14:46,139 - INFO - Clustering 0 keywords into 0 clusters for category: procurement
+2025-04-05 23:14:46,139 - INFO - Found 0 representative keywords for category: procurement
+2025-04-05 23:14:46,139 - INFO - Representative keywords: []
+2025-04-05 23:14:46,139 - INFO - Processing category: city
+2025-04-05 23:14:46,139 - INFO - Skipping clustering for category: city
+2025-04-05 23:14:46,139 - INFO - Processing category: country
+2025-04-05 23:14:46,139 - INFO - Skipping clustering for category: country
+2025-04-05 23:14:46,139 - INFO - Processing category: continent
+2025-04-05 23:14:46,139 - INFO - Skipping clustering for category: continent
+2025-04-05 23:14:46,139 - INFO - Processing category: capacity risk
+2025-04-05 23:14:46,139 - INFO - Clustering 0 keywords into 0 clusters for category: capacity risk
+2025-04-05 23:14:46,139 - INFO - Found 0 representative keywords for category: capacity risk
+2025-04-05 23:14:46,139 - INFO - Representative keywords: []
+2025-04-05 23:14:46,139 - INFO - Processing category: geopolitical risk
+2025-04-05 23:14:46,139 - INFO - Clustering 0 keywords into 0 clusters for category: geopolitical risk
+2025-04-05 23:14:46,139 - INFO - Found 0 representative keywords for category: geopolitical risk
+2025-04-05 23:14:46,139 - INFO - Representative keywords: []
+2025-04-05 23:18:46,979 - INFO - Starting keyword clustering process
+2025-04-05 23:18:46,979 - INFO - Input folder: data/keywords
+2025-04-05 23:18:46,979 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:18:46,979 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:18:47,005 - INFO - Loaded 4 keywords for category: industries
+2025-04-05 23:18:47,005 - INFO - Loaded 5 keywords for category: services
+2025-04-05 23:18:47,005 - INFO - Loaded 0 keywords for category: materials
+2025-04-05 23:18:47,005 - INFO - Loaded 0 keywords for category: products
+2025-04-05 23:18:47,005 - INFO - Loaded 2 keywords for category: technology
+2025-04-05 23:18:47,005 - INFO - Loaded 1 keywords for category: logistics
+2025-04-05 23:18:47,005 - INFO - Loaded 0 keywords for category: procurement
+2025-04-05 23:18:47,005 - INFO - Loaded 1 keywords for category: city
+2025-04-05 23:18:47,005 - INFO - Loaded 1 keywords for category: country
+2025-04-05 23:18:47,005 - INFO - Loaded 1 keywords for category: continent
+2025-04-05 23:18:47,005 - INFO - Loaded 0 keywords for category: capacity risk
+2025-04-05 23:18:47,005 - INFO - Loaded 0 keywords for category: geopolitical risk
+2025-04-05 23:18:47,650 - INFO - Starting keyword clustering process
+2025-04-05 23:18:47,650 - INFO - Processing category: industries
+2025-04-05 23:18:47,650 - INFO - Clustering 4 keywords into 4 clusters for category: industries
+2025-04-05 23:18:47,650 - INFO - Found 4 representative keywords for category: industries
+2025-04-05 23:18:47,650 - INFO - Representative keywords: ['event management', 'hospitality', 'catering', 'convention services']
+2025-04-05 23:18:47,650 - INFO - Processing category: services
+2025-04-05 23:18:47,650 - INFO - Clustering 5 keywords into 5 clusters for category: services
+2025-04-05 23:18:47,650 - INFO - Found 5 representative keywords for category: services
+2025-04-05 23:18:47,650 - INFO - Representative keywords: ['production & audio visual', 'public safety & fire management', 'in booth food & beverage services', 'in booth telecom/internet services', 'general service contractors']
+2025-04-05 23:18:47,650 - INFO - Processing category: materials
+2025-04-05 23:18:47,651 - INFO - Clustering 0 keywords into 0 clusters for category: materials
+2025-04-05 23:18:47,651 - INFO - Found 0 representative keywords for category: materials
+2025-04-05 23:18:47,651 - INFO - Representative keywords: []
+2025-04-05 23:18:47,651 - INFO - Processing category: products
+2025-04-05 23:18:47,651 - INFO - Clustering 0 keywords into 0 clusters for category: products
+2025-04-05 23:18:47,651 - INFO - Found 0 representative keywords for category: products
+2025-04-05 23:18:47,651 - INFO - Representative keywords: []
+2025-04-05 23:18:47,651 - INFO - Processing category: technology
+2025-04-05 23:18:47,651 - INFO - Clustering 2 keywords into 2 clusters for category: technology
+2025-04-05 23:18:47,651 - INFO - Found 2 representative keywords for category: technology
+2025-04-05 23:18:47,651 - INFO - Representative keywords: ['telecom', 'internet services']
+2025-04-05 23:18:47,651 - INFO - Processing category: logistics
+2025-04-05 23:18:47,651 - INFO - Clustering 1 keywords into 1 clusters for category: logistics
+2025-04-05 23:18:47,651 - INFO - Found 1 representative keywords for category: logistics
+2025-04-05 23:18:47,651 - INFO - Representative keywords: ['freight deliveries']
+2025-04-05 23:18:47,651 - INFO - Processing category: procurement
+2025-04-05 23:18:47,651 - INFO - Clustering 0 keywords into 0 clusters for category: procurement
+2025-04-05 23:18:47,651 - INFO - Found 0 representative keywords for category: procurement
+2025-04-05 23:18:47,651 - INFO - Representative keywords: []
+2025-04-05 23:18:47,651 - INFO - Processing category: city
+2025-04-05 23:18:47,651 - INFO - Skipping clustering for category: city
+2025-04-05 23:18:47,651 - INFO - Processing category: country
+2025-04-05 23:18:47,651 - INFO - Skipping clustering for category: country
+2025-04-05 23:18:47,651 - INFO - Processing category: continent
+2025-04-05 23:18:47,651 - INFO - Skipping clustering for category: continent
+2025-04-05 23:18:47,651 - INFO - Processing category: capacity risk
+2025-04-05 23:18:47,651 - INFO - Clustering 0 keywords into 0 clusters for category: capacity risk
+2025-04-05 23:18:47,651 - INFO - Found 0 representative keywords for category: capacity risk
+2025-04-05 23:18:47,651 - INFO - Representative keywords: []
+2025-04-05 23:18:47,651 - INFO - Processing category: geopolitical risk
+2025-04-05 23:18:47,651 - INFO - Clustering 0 keywords into 0 clusters for category: geopolitical risk
+2025-04-05 23:18:47,651 - INFO - Found 0 representative keywords for category: geopolitical risk
+2025-04-05 23:18:47,651 - INFO - Representative keywords: []
+2025-04-05 23:20:16,852 - INFO - Starting keyword clustering process
+2025-04-05 23:20:16,852 - INFO - Input folder: data/keywords
+2025-04-05 23:20:16,852 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:20:16,852 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:20:16,866 - INFO - Loaded 4 keywords for category: industries
+2025-04-05 23:20:16,866 - INFO - Loaded 5 keywords for category: services
+2025-04-05 23:20:16,866 - INFO - Loaded 0 keywords for category: materials
+2025-04-05 23:20:16,866 - INFO - Loaded 0 keywords for category: products
+2025-04-05 23:20:16,866 - INFO - Loaded 2 keywords for category: technology
+2025-04-05 23:20:16,866 - INFO - Loaded 1 keywords for category: logistics
+2025-04-05 23:20:16,866 - INFO - Loaded 0 keywords for category: procurement
+2025-04-05 23:20:16,866 - INFO - Loaded 1 keywords for category: city
+2025-04-05 23:20:16,866 - INFO - Loaded 1 keywords for category: country
+2025-04-05 23:20:16,866 - INFO - Loaded 1 keywords for category: continent
+2025-04-05 23:20:16,866 - INFO - Loaded 0 keywords for category: capacity risk
+2025-04-05 23:20:16,866 - INFO - Loaded 0 keywords for category: geopolitical risk
+2025-04-05 23:20:17,417 - INFO - Starting keyword clustering process
+2025-04-05 23:20:17,417 - INFO - Processing category: industries
+2025-04-05 23:20:17,417 - INFO - Clustering 4 keywords into 4 clusters for category: industries
+2025-04-05 23:20:17,417 - INFO - Found 4 representative keywords for category: industries
+2025-04-05 23:20:17,417 - INFO - Representative keywords: ['event management', 'hospitality', 'catering', 'convention services']
+2025-04-05 23:20:17,417 - INFO - Processing category: services
+2025-04-05 23:20:17,417 - INFO - Clustering 5 keywords into 5 clusters for category: services
+2025-04-05 23:20:17,417 - INFO - Found 5 representative keywords for category: services
+2025-04-05 23:20:17,417 - INFO - Representative keywords: ['production & audio visual', 'public safety & fire management', 'in booth food & beverage services', 'in booth telecom/internet services', 'general service contractors']
+2025-04-05 23:20:17,417 - INFO - Processing category: materials
+2025-04-05 23:20:17,417 - INFO - Clustering 0 keywords into 0 clusters for category: materials
+2025-04-05 23:20:17,417 - INFO - Found 0 representative keywords for category: materials
+2025-04-05 23:20:17,417 - INFO - Representative keywords: []
+2025-04-05 23:20:17,417 - INFO - Processing category: products
+2025-04-05 23:20:17,417 - INFO - Clustering 0 keywords into 0 clusters for category: products
+2025-04-05 23:20:17,417 - INFO - Found 0 representative keywords for category: products
+2025-04-05 23:20:17,417 - INFO - Representative keywords: []
+2025-04-05 23:20:17,417 - INFO - Processing category: technology
+2025-04-05 23:20:17,417 - INFO - Clustering 2 keywords into 2 clusters for category: technology
+2025-04-05 23:20:17,417 - INFO - Found 2 representative keywords for category: technology
+2025-04-05 23:20:17,417 - INFO - Representative keywords: ['telecom', 'internet services']
+2025-04-05 23:20:17,417 - INFO - Processing category: logistics
+2025-04-05 23:20:17,417 - INFO - Clustering 1 keywords into 1 clusters for category: logistics
+2025-04-05 23:20:17,417 - INFO - Found 1 representative keywords for category: logistics
+2025-04-05 23:20:17,417 - INFO - Representative keywords: ['freight deliveries']
+2025-04-05 23:20:17,417 - INFO - Processing category: procurement
+2025-04-05 23:20:17,417 - INFO - Clustering 0 keywords into 0 clusters for category: procurement
+2025-04-05 23:20:17,417 - INFO - Found 0 representative keywords for category: procurement
+2025-04-05 23:20:17,417 - INFO - Representative keywords: []
+2025-04-05 23:20:17,417 - INFO - Processing category: city
+2025-04-05 23:20:17,417 - INFO - Skipping clustering for category: city
+2025-04-05 23:20:17,417 - INFO - Processing category: country
+2025-04-05 23:20:17,417 - INFO - Skipping clustering for category: country
+2025-04-05 23:20:17,417 - INFO - Processing category: continent
+2025-04-05 23:20:17,417 - INFO - Skipping clustering for category: continent
+2025-04-05 23:20:17,417 - INFO - Processing category: capacity risk
+2025-04-05 23:20:17,417 - INFO - Clustering 0 keywords into 0 clusters for category: capacity risk
+2025-04-05 23:20:17,417 - INFO - Found 0 representative keywords for category: capacity risk
+2025-04-05 23:20:17,417 - INFO - Representative keywords: []
+2025-04-05 23:20:17,417 - INFO - Processing category: geopolitical risk
+2025-04-05 23:20:17,417 - INFO - Clustering 0 keywords into 0 clusters for category: geopolitical risk
+2025-04-05 23:20:17,417 - INFO - Found 0 representative keywords for category: geopolitical risk
+2025-04-05 23:20:17,417 - INFO - Representative keywords: []
+2025-04-05 23:21:13,500 - INFO - Starting keyword clustering process
+2025-04-05 23:21:13,500 - INFO - Input folder: data/keywords
+2025-04-05 23:21:13,500 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:21:13,500 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:21:13,511 - INFO - Loaded 4 keywords for category: industries
+2025-04-05 23:21:13,511 - INFO - Loaded 5 keywords for category: services
+2025-04-05 23:21:13,511 - INFO - Loaded 0 keywords for category: materials
+2025-04-05 23:21:13,511 - INFO - Loaded 0 keywords for category: products
+2025-04-05 23:21:13,511 - INFO - Loaded 2 keywords for category: technology
+2025-04-05 23:21:13,511 - INFO - Loaded 1 keywords for category: logistics
+2025-04-05 23:21:13,511 - INFO - Loaded 0 keywords for category: procurement
+2025-04-05 23:21:13,511 - INFO - Loaded 1 keywords for category: city
+2025-04-05 23:21:13,511 - INFO - Loaded 1 keywords for category: country
+2025-04-05 23:21:13,511 - INFO - Loaded 1 keywords for category: continent
+2025-04-05 23:21:13,511 - INFO - Loaded 0 keywords for category: capacity risk
+2025-04-05 23:21:13,511 - INFO - Loaded 0 keywords for category: geopolitical risk
+2025-04-05 23:21:15,596 - INFO - Starting keyword clustering process
+2025-04-05 23:21:15,596 - INFO - Processing category: industries
+2025-04-05 23:21:15,596 - INFO - Clustering 4 keywords into 4 clusters for category: industries
+2025-04-05 23:21:15,596 - INFO - Found 4 representative keywords for category: industries
+2025-04-05 23:21:15,596 - INFO - Representative keywords: ['event management', 'hospitality', 'catering', 'convention services']
+2025-04-05 23:21:15,596 - INFO - Processing category: services
+2025-04-05 23:21:15,596 - INFO - Clustering 5 keywords into 5 clusters for category: services
+2025-04-05 23:21:15,596 - INFO - Found 5 representative keywords for category: services
+2025-04-05 23:21:15,596 - INFO - Representative keywords: ['production & audio visual', 'public safety & fire management', 'in booth food & beverage services', 'in booth telecom/internet services', 'general service contractors']
+2025-04-05 23:21:15,596 - INFO - Processing category: materials
+2025-04-05 23:21:15,596 - INFO - Clustering 0 keywords into 0 clusters for category: materials
+2025-04-05 23:21:15,596 - INFO - Found 0 representative keywords for category: materials
+2025-04-05 23:21:15,596 - INFO - Representative keywords: []
+2025-04-05 23:21:15,596 - INFO - Processing category: products
+2025-04-05 23:21:15,596 - INFO - Clustering 0 keywords into 0 clusters for category: products
+2025-04-05 23:21:15,596 - INFO - Found 0 representative keywords for category: products
+2025-04-05 23:21:15,597 - INFO - Representative keywords: []
+2025-04-05 23:21:15,597 - INFO - Processing category: technology
+2025-04-05 23:21:15,597 - INFO - Clustering 2 keywords into 2 clusters for category: technology
+2025-04-05 23:21:15,597 - INFO - Found 2 representative keywords for category: technology
+2025-04-05 23:21:15,597 - INFO - Representative keywords: ['telecom', 'internet services']
+2025-04-05 23:21:15,597 - INFO - Processing category: logistics
+2025-04-05 23:21:15,597 - INFO - Clustering 1 keywords into 1 clusters for category: logistics
+2025-04-05 23:21:15,597 - INFO - Found 1 representative keywords for category: logistics
+2025-04-05 23:21:15,597 - INFO - Representative keywords: ['freight deliveries']
+2025-04-05 23:21:15,597 - INFO - Processing category: procurement
+2025-04-05 23:21:15,597 - INFO - Clustering 0 keywords into 0 clusters for category: procurement
+2025-04-05 23:21:15,597 - INFO - Found 0 representative keywords for category: procurement
+2025-04-05 23:21:15,597 - INFO - Representative keywords: []
+2025-04-05 23:21:15,597 - INFO - Processing category: city
+2025-04-05 23:21:15,597 - INFO - Skipping clustering for category: city
+2025-04-05 23:21:15,597 - INFO - Found 1 keywords for category: city
+2025-04-05 23:21:15,597 - INFO - Representative keywords: [KeywordData(keyword='san francisco', source_file='moscone.com_keywords.json', url='moscone.com')]
+2025-04-05 23:21:15,597 - INFO - Processing category: country
+2025-04-05 23:21:15,597 - INFO - Skipping clustering for category: country
+2025-04-05 23:21:15,597 - INFO - Found 1 keywords for category: country
+2025-04-05 23:21:15,597 - INFO - Representative keywords: [KeywordData(keyword='united states', source_file='moscone.com_keywords.json', url='moscone.com')]
+2025-04-05 23:21:15,597 - INFO - Processing category: continent
+2025-04-05 23:21:15,597 - INFO - Skipping clustering for category: continent
+2025-04-05 23:21:15,597 - INFO - Found 1 keywords for category: continent
+2025-04-05 23:21:15,597 - INFO - Representative keywords: [KeywordData(keyword='north america', source_file='moscone.com_keywords.json', url='moscone.com')]
+2025-04-05 23:21:15,597 - INFO - Processing category: capacity risk
+2025-04-05 23:21:15,597 - INFO - Clustering 0 keywords into 0 clusters for category: capacity risk
+2025-04-05 23:21:15,597 - INFO - Found 0 representative keywords for category: capacity risk
+2025-04-05 23:21:15,597 - INFO - Representative keywords: []
+2025-04-05 23:21:15,597 - INFO - Processing category: geopolitical risk
+2025-04-05 23:21:15,597 - INFO - Clustering 0 keywords into 0 clusters for category: geopolitical risk
+2025-04-05 23:21:15,597 - INFO - Found 0 representative keywords for category: geopolitical risk
+2025-04-05 23:21:15,597 - INFO - Representative keywords: []
+2025-04-05 23:21:58,328 - INFO - Starting keyword clustering process
+2025-04-05 23:21:58,328 - INFO - Input folder: data/keywords
+2025-04-05 23:21:58,328 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:21:58,328 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:21:58,342 - INFO - Loaded 4 keywords for category: industries
+2025-04-05 23:21:58,342 - INFO - Loaded 5 keywords for category: services
+2025-04-05 23:21:58,342 - INFO - Loaded 0 keywords for category: materials
+2025-04-05 23:21:58,342 - INFO - Loaded 0 keywords for category: products
+2025-04-05 23:21:58,342 - INFO - Loaded 2 keywords for category: technology
+2025-04-05 23:21:58,342 - INFO - Loaded 1 keywords for category: logistics
+2025-04-05 23:21:58,342 - INFO - Loaded 0 keywords for category: procurement
+2025-04-05 23:21:58,342 - INFO - Loaded 1 keywords for category: city
+2025-04-05 23:21:58,342 - INFO - Loaded 1 keywords for category: country
+2025-04-05 23:21:58,342 - INFO - Loaded 1 keywords for category: continent
+2025-04-05 23:21:58,342 - INFO - Loaded 0 keywords for category: capacity risk
+2025-04-05 23:21:58,342 - INFO - Loaded 0 keywords for category: geopolitical risk
+2025-04-05 23:21:58,900 - INFO - Starting keyword clustering process
+2025-04-05 23:21:58,900 - INFO - Processing category: industries
+2025-04-05 23:21:58,900 - INFO - Clustering 4 keywords into 4 clusters for category: industries
+2025-04-05 23:21:58,900 - INFO - Found 4 representative keywords for category: industries
+2025-04-05 23:21:58,900 - INFO - Representative keywords: ['event management', 'hospitality', 'catering', 'convention services']
+2025-04-05 23:21:58,900 - INFO - Processing category: services
+2025-04-05 23:21:58,900 - INFO - Clustering 5 keywords into 5 clusters for category: services
+2025-04-05 23:21:58,900 - INFO - Found 5 representative keywords for category: services
+2025-04-05 23:21:58,900 - INFO - Representative keywords: ['production & audio visual', 'public safety & fire management', 'in booth food & beverage services', 'in booth telecom/internet services', 'general service contractors']
+2025-04-05 23:21:58,900 - INFO - Processing category: materials
+2025-04-05 23:21:58,900 - INFO - Clustering 0 keywords into 0 clusters for category: materials
+2025-04-05 23:21:58,900 - INFO - Found 0 representative keywords for category: materials
+2025-04-05 23:21:58,900 - INFO - Representative keywords: []
+2025-04-05 23:21:58,900 - INFO - Processing category: products
+2025-04-05 23:21:58,900 - INFO - Clustering 0 keywords into 0 clusters for category: products
+2025-04-05 23:21:58,900 - INFO - Found 0 representative keywords for category: products
+2025-04-05 23:21:58,900 - INFO - Representative keywords: []
+2025-04-05 23:21:58,900 - INFO - Processing category: technology
+2025-04-05 23:21:58,900 - INFO - Clustering 2 keywords into 2 clusters for category: technology
+2025-04-05 23:21:58,900 - INFO - Found 2 representative keywords for category: technology
+2025-04-05 23:21:58,900 - INFO - Representative keywords: ['telecom', 'internet services']
+2025-04-05 23:21:58,900 - INFO - Processing category: logistics
+2025-04-05 23:21:58,900 - INFO - Clustering 1 keywords into 1 clusters for category: logistics
+2025-04-05 23:21:58,900 - INFO - Found 1 representative keywords for category: logistics
+2025-04-05 23:21:58,900 - INFO - Representative keywords: ['freight deliveries']
+2025-04-05 23:21:58,900 - INFO - Processing category: procurement
+2025-04-05 23:21:58,900 - INFO - Clustering 0 keywords into 0 clusters for category: procurement
+2025-04-05 23:21:58,900 - INFO - Found 0 representative keywords for category: procurement
+2025-04-05 23:21:58,900 - INFO - Representative keywords: []
+2025-04-05 23:21:58,900 - INFO - Processing category: city
+2025-04-05 23:21:58,900 - INFO - Skipping clustering for category: city
+2025-04-05 23:21:58,900 - INFO - Processing category: country
+2025-04-05 23:21:58,900 - INFO - Skipping clustering for category: country
+2025-04-05 23:21:58,900 - INFO - Processing category: continent
+2025-04-05 23:21:58,900 - INFO - Skipping clustering for category: continent
+2025-04-05 23:21:58,900 - INFO - Processing category: capacity risk
+2025-04-05 23:21:58,900 - INFO - Clustering 0 keywords into 0 clusters for category: capacity risk
+2025-04-05 23:21:58,900 - INFO - Found 0 representative keywords for category: capacity risk
+2025-04-05 23:21:58,900 - INFO - Representative keywords: []
+2025-04-05 23:21:58,900 - INFO - Processing category: geopolitical risk
+2025-04-05 23:21:58,900 - INFO - Clustering 0 keywords into 0 clusters for category: geopolitical risk
+2025-04-05 23:21:58,900 - INFO - Found 0 representative keywords for category: geopolitical risk
+2025-04-05 23:21:58,900 - INFO - Representative keywords: []
+2025-04-05 23:22:30,868 - INFO - Starting keyword clustering process
+2025-04-05 23:22:30,868 - INFO - Input folder: data/keywords
+2025-04-05 23:22:30,868 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:22:30,868 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:23:27,207 - INFO - Starting keyword clustering process
+2025-04-05 23:23:27,208 - INFO - Input folder: data/keywords
+2025-04-05 23:23:27,208 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:23:27,208 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:26:10,768 - INFO - Starting keyword clustering process
+2025-04-05 23:26:10,768 - INFO - Input folder: data/keywords
+2025-04-05 23:26:10,768 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:26:10,768 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:26:10,808 - INFO - Loaded 304 keywords for category: industries
+2025-04-05 23:26:10,808 - INFO - Loaded 479 keywords for category: services
+2025-04-05 23:26:10,809 - INFO - Loaded 78 keywords for category: materials
+2025-04-05 23:26:10,809 - INFO - Loaded 307 keywords for category: products
+2025-04-05 23:26:10,809 - INFO - Loaded 212 keywords for category: technology
+2025-04-05 23:26:10,809 - INFO - Loaded 38 keywords for category: logistics
+2025-04-05 23:26:10,809 - INFO - Loaded 38 keywords for category: procurement
+2025-04-05 23:26:10,809 - INFO - Loaded 291 keywords for category: city
+2025-04-05 23:26:10,809 - INFO - Loaded 122 keywords for category: country
+2025-04-05 23:26:10,809 - INFO - Loaded 98 keywords for category: continent
+2025-04-05 23:26:10,809 - INFO - Loaded 68 keywords for category: capacity risk
+2025-04-05 23:26:10,809 - INFO - Loaded 7 keywords for category: geopolitical risk
+2025-04-05 23:26:11,297 - INFO - Starting keyword clustering process
+2025-04-05 23:26:11,297 - INFO - Processing category: industries
+2025-04-05 23:26:11,297 - INFO - Clustering 304 keywords into 40 clusters for category: industries
+2025-04-05 23:26:11,575 - INFO - Found 40 representative keywords for category: industries
+2025-04-05 23:26:11,575 - INFO - Representative keywords: ['senior living', 'education', 'infrastructure', 'banking', 'healthcare', 'alcohol distribution', 'transportation', 'construction', 'manufacturing', 'real estate', 'entertainment', 'surgical robotics', 'energy', 'engineering', 'event management', 'travel', 'finance', 'radiology', 'retail', 'hospitality', 'life sciences', 'automotive', 'geotechnical', 'advertising', 'telecom', 'wealth management', 'steel', 'consumer/cpg', 'environmental', 'mining', 'media', 'information services', 'marketing', 'process heating', 'financial services', 'renewable energy', 'food service', 'logistics', 'environmental consulting', 'defense']
+2025-04-05 23:26:11,575 - INFO - Processing category: services
+2025-04-05 23:26:11,575 - INFO - Clustering 479 keywords into 40 clusters for category: services
+2025-04-05 23:26:11,924 - INFO - Found 40 representative keywords for category: services
+2025-04-05 23:26:11,924 - INFO - Representative keywords: ['responsive design', 'customer service', 'structural design', 'customer acquisition', 'development', 'design', 'industrial services', 'consulting', 'financial planning', 'personal banking', 'insurance', 'accommodation', 'investment properties', 'marketing', 'catering', 'litigation', 'project management', 'assessments', 'training', 'patient resources', 'planning', 'asset management', 'lead generation', 'claims processing', 'casino gaming', 'fulfillment', 'private placements', 'automation', 'restoration', 'construction support', 'integration', 'professional staffing', 'data protection', 'campaign analysis', 'engineering solutions', 'environmental management', 'real estate brokerage', 'equipment financing', 'diagnostic imaging', 'loan services']
+2025-04-05 23:26:11,924 - INFO - Processing category: materials
+2025-04-05 23:26:11,924 - INFO - Clustering 78 keywords into 40 clusters for category: materials
+2025-04-05 23:26:12,143 - INFO - Found 40 representative keywords for category: materials
+2025-04-05 23:26:12,143 - INFO - Representative keywords: ['cigars', 'corrugated graphite gasket', 'gemstones', 'antimicrobial fabric', 'media', 'educational texts', 'signage', 'reflective markers', 'credit cards', 'liquid fuels', 'synthetic fibers', 'nail treatments', 'note pads', 'human ipscs', 'equipment', 'ammunition', 'supplies', 'electrodes', 'emv contactless cards', 'hardwood', 'landfill gas', 'beer', 'water', 'dual interface cards', 'groundwater amendments', 'compressed fiber gaskets', 'millwork', 'passive spheres', 'gold', 'polymer', 'medical printer paper', 'graphite', 'luxury vinyl tile', 'disinfectants', 'investigation derived waste', 'plastic-coated fabrics', 'cosmetics', 'aluminum', 'seat velours', 'door units']
+2025-04-05 23:26:12,143 - INFO - Processing category: products
+2025-04-05 23:26:12,143 - INFO - Clustering 307 keywords into 40 clusters for category: products
+2025-04-05 23:26:12,498 - INFO - Found 40 representative keywords for category: products
+2025-04-05 23:26:12,498 - INFO - Representative keywords: ['tricycles', 'flooring', 'proposals', 'loans', 'contract', 'mri', 'health experiences', 'checking accounts', 'housing', 'medical equipment', 'ostomy', 'dining options', 'fcm platform', 'accessories', 'tequila', 'heavy-duty trucks', 'pulsar core', 'environmental studies', 'wheel balancers', 'gift cards', 'luxury rooms', 'production data and analytics tool', 'wireless router test platform', 'hedge funds', 'ultrasound', 'beer', 'new developments', 'home insurance', 'home equity loans', 'specialty products', 'nail polish', 'credit cards', 'market intelligence platform', 'roofing software', 'investment dashboard', 'cardiac cells', 'aquifer testing', 'polaris lyra', 'pet/ct', 'golf memberships']
+2025-04-05 23:26:12,498 - INFO - Processing category: technology
+2025-04-05 23:26:12,498 - INFO - Clustering 212 keywords into 40 clusters for category: technology
+2025-04-05 23:26:12,816 - INFO - Found 40 representative keywords for category: technology
+2025-04-05 23:26:12,816 - INFO - Representative keywords: ['secure messaging', 'state-of-the-art diagnostic imaging', 'cutting-edge solutions', 'state-of-the-art facilities', 'automation', 'digital scanner', 'digital experience', 'financial calculators', 'technology and tools', 'transactional portal', 'optical navigation', 'enterprise software', 'online quote system', 'language detection', 'performance analytics', 'data security', 'online access', 'advanced manufacturing', 'common data environment', 'advanced imaging technology', 'proprietary prospecting cadences', 'wireless tracking', 'integrated text payments', 'advanced solutions', 'online booking system', 'advanced technologies', 'cyber law', 'online banking', 'mobile app', 'advanced rifle cartridge', 'data analytics', 'cloud-based', 'information technology', 'advanced shipping notice registration', 'simulation-based courses', 'latest technology', 'knitting techniques', 'ballistic calculators', 'data collection', 'color lock system']
+2025-04-05 23:26:12,817 - INFO - Processing category: logistics
+2025-04-05 23:26:12,817 - INFO - Clustering 38 keywords into 38 clusters for category: logistics
+2025-04-05 23:26:12,817 - INFO - Found 38 representative keywords for category: logistics
+2025-04-05 23:26:12,817 - INFO - Representative keywords: ['freight deliveries', 'business trips', 'travel arrangements', 'network device management', 'cable plant monitoring', 'warehouse', 'distribution', 'global trade', 'payment collection', 'trade documentation', 'nationwide network', 'shipping', 'distribution', 'integrated logistics', 'shipping', 'distribution', 'shuttle service', 'transportation', 'airport transfers', 'distribution centers', 'event logistics', 'catering logistics', 'inventory access', 'ad placements', 'international shipping', 'distribution centers', 'ecommerce', 'drop shipment', 'freight', 'shipping', 'transportation', 'outsourcing', 'global talent', 'supply chain management', 'call center operations', 'flexibility to scale', 'transportation', 'distribution']
+2025-04-05 23:26:12,817 - INFO - Processing category: procurement
+2025-04-05 23:26:12,817 - INFO - Clustering 38 keywords into 38 clusters for category: procurement
+2025-04-05 23:26:12,817 - INFO - Found 38 representative keywords for category: procurement
+2025-04-05 23:26:12,817 - INFO - Representative keywords: ['vendor management', 'sourcing', 'purchasing', 'vendor management', 'sourcing', 'negotiation', 'candidate screening', 'recruiting', 'vendor management', 'distributor partnerships', 'vendor management', 'supplier evaluation', 'supplier management', 'material orders', 'group purchasing contracts', 'vendor management', 'sourcing', 'negotiation', 'vendor management', 'supplier evaluation', 'supplier management', 'vendor negotiation', 'vendor management', 'sourcing', 'vendor management', 'contracts', 'vendor management', 'sourcing', 'vendor management', 'sourcing', 'supplier evaluation', 'vendor management', 'sourcing', 'supplier evaluation', 'negotiation', 'purchasing', 'contract management', 'cost analysis']
+2025-04-05 23:26:12,817 - INFO - Processing category: city
+2025-04-05 23:26:12,817 - INFO - Skipping clustering for category: city
+2025-04-05 23:26:12,817 - INFO - Processing category: country
+2025-04-05 23:26:12,817 - INFO - Skipping clustering for category: country
+2025-04-05 23:26:12,817 - INFO - Processing category: continent
+2025-04-05 23:26:12,817 - INFO - Skipping clustering for category: continent
+2025-04-05 23:26:12,818 - INFO - Processing category: capacity risk
+2025-04-05 23:26:12,818 - INFO - Clustering 68 keywords into 15 clusters for category: capacity risk
+2025-04-05 23:28:43,928 - INFO - Starting keyword clustering process
+2025-04-05 23:28:43,928 - INFO - Input folder: data/keywords
+2025-04-05 23:28:43,928 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:28:43,928 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:28:43,969 - INFO - Loaded 304 keywords for category: industries
+2025-04-05 23:28:43,969 - INFO - Loaded 476 keywords for category: services
+2025-04-05 23:28:43,969 - INFO - Loaded 82 keywords for category: materials
+2025-04-05 23:28:43,969 - INFO - Loaded 318 keywords for category: products
+2025-04-05 23:28:43,969 - INFO - Loaded 214 keywords for category: technology
+2025-04-05 23:28:43,969 - INFO - Loaded 38 keywords for category: logistics
+2025-04-05 23:28:43,969 - INFO - Loaded 38 keywords for category: procurement
+2025-04-05 23:28:43,969 - INFO - Loaded 290 keywords for category: city
+2025-04-05 23:28:43,969 - INFO - Loaded 121 keywords for category: country
+2025-04-05 23:28:43,969 - INFO - Loaded 97 keywords for category: continent
+2025-04-05 23:28:43,969 - INFO - Loaded 68 keywords for category: capacity risk
+2025-04-05 23:28:43,969 - INFO - Loaded 7 keywords for category: geopolitical risk
+2025-04-05 23:28:44,460 - INFO - Starting keyword clustering process
+2025-04-05 23:28:44,460 - INFO - Processing category: industries
+2025-04-05 23:28:44,460 - INFO - Clustering 304 keywords into 40 clusters for category: industries
+2025-04-05 23:28:44,742 - INFO - Found 40 representative keywords for category: industries
+2025-04-05 23:28:44,742 - INFO - Representative keywords: ['healthcare', 'finance', 'engineering', 'construction', 'transportation', 'environmental', 'insurance', 'entertainment', 'hospitality', 'wealth management', 'financial services', 'media', 'manufacturing', 'beverage distribution', 'retail', 'event management', 'education', 'automotive', 'real estate', 'medical imaging', 'telecom', 'energy', 'marketing', 'architecture', 'banking', 'life sciences', 'logistics', 'surgical robotics', 'geotechnical', 'environmental consultancy', 'language training', 'government', 'residential', 'chemical', 'business services', 'technology', 'staffing', 'radiology', 'defense', 'advertising']
+2025-04-05 23:28:44,743 - INFO - Processing category: services
+2025-04-05 23:28:44,743 - INFO - Clustering 476 keywords into 40 clusters for category: services
+2025-04-05 23:28:45,279 - INFO - Found 40 representative keywords for category: services
+2025-04-05 23:28:45,279 - INFO - Representative keywords: ['virtual care', 'consulting', 'campaign analysis', 'residential mortgages', 'customer acquisition', 'planning services', 'marketing', 'restaurant services', 'trade document management', 'training', 'healthcare market research', 'merchant services', 'engineering solutions', 'design', 'customer support', 'development', 'diagnostic imaging', 'industrial services', 'cyber security', 'financial education', 'accessories', 'project management', 'geotechnical services', 'personal banking', 'insurance', 'financial management', 'event planning', 'catering', 'health solutions', 'portfolio advisory', 'civil construction', 'technical staffing', 'nutrition classes', 'temporary staffing', 'restoration', 'screen printing', 'real estate brokerage', 'automation', 'asset management', 'on-demand care']
+2025-04-05 23:28:45,279 - INFO - Processing category: materials
+2025-04-05 23:28:45,279 - INFO - Clustering 82 keywords into 40 clusters for category: materials
+2025-04-05 23:28:45,470 - INFO - Found 40 representative keywords for category: materials
+2025-04-05 23:28:45,470 - INFO - Representative keywords: ['bottled water', 'gemstones', 'hardwood', 'disposables', 'ammunition', 'aluminum', 'corrugated graphite gasket', 'reflective markers', 'plastic-coated fabrics', 'stationery', 'graphite', 'batteries', 'beer', 'reagents', 'bread crumbs', 'credit cards', 'nail treatments', 'liquid fuels', 'gold', 'dual interface cards', 'landfill gas', 'educational texts', 'truck parts', 'passive spheres', 'luxury vinyl tile', 'note pads', 'door units', 'equipment', 'rubber', 'seat velours', 'human ipscs', 'synthetic fibers', 'emv contactless cards', 'groundwater amendments', 'medical printer paper', 'compressed fiber gaskets', 'disinfectants', 'wall coverings', 'coconut flakes', 'millwork']
+2025-04-05 23:28:45,470 - INFO - Processing category: products
+2025-04-05 23:28:45,470 - INFO - Clustering 318 keywords into 40 clusters for category: products
+2025-04-05 23:28:45,825 - INFO - Found 40 representative keywords for category: products
+2025-04-05 23:28:45,825 - INFO - Representative keywords: ['loans', 'jewelry', 'pulsar platform', 'savings accounts', 'accessories', 'market intelligence platform', 'production data and analytics tool', 'universal life', 'mri', 'residential properties', 'payment cards', 'hotel rooms', 'urology', 'specialty products', 'tire assemblies', 'pet/ct', 'doors', 'beer', 'hedge funds', 'electric trucks', 'sauced shrimp', 'steam enhanced extraction', 'wheels', 'home insurance', 'friction conveyor system', 'family plans', 'ultrasound', 'dining options', 'water quality investigations', 'unified data trust platform', 'data products', 'change', 'checking accounts', 'contract', 'cardiac cells', 'golf memberships', 'janitorial supplies', 'polaris vega', 'emergency notification system', 'thermal conduction heating']
+2025-04-05 23:28:45,826 - INFO - Processing category: technology
+2025-04-05 23:28:45,826 - INFO - Clustering 214 keywords into 40 clusters for category: technology
+2025-04-05 23:28:46,370 - INFO - Found 40 representative keywords for category: technology
+2025-04-05 23:28:46,371 - INFO - Representative keywords: ['health records access', 'online access', 'machine design', 'ai models', 'advanced manufacturing', 'advanced solutions', 'data governance program', 'data analytics', 'advanced technologies', 'data sophistication', 'language detection', 'digital banking', 'data security', 'secure messaging', 'state-of-the-art facilities', 'advanced shipping notice registration', 'financial calculators', 'optical navigation', 'color lock system', 'assisted listening devices', 'automation', 'transactional portal', 'ballistic calculators', 'online booking system', 'advanced imaging technology', 'wireless tracking', 'cloud migrations', 'third party connectors', 'cloud-based', 'data monitoring', 'lead conversion', 'mobile app', 'digital print technology', 'data collection', 'proprietary tech', 'data retrieval', 'information technology', 'knitting techniques', 'advanced rifle cartridge', 'customizable dashboards']
+2025-04-05 23:28:46,371 - INFO - Processing category: logistics
+2025-04-05 23:28:46,371 - INFO - Clustering 38 keywords into 38 clusters for category: logistics
+2025-04-05 23:28:46,371 - INFO - Found 38 representative keywords for category: logistics
+2025-04-05 23:28:46,371 - INFO - Representative keywords: ['freight deliveries', 'business trips', 'travel arrangements', 'network device management', 'cable plant monitoring', 'warehouse', 'distribution', 'global trade', 'payment collection', 'trade documentation', 'nationwide network', 'shipping', 'distribution', 'integrated logistics', 'shipping', 'distribution', 'shuttle service', 'transportation', 'airport transfers', 'distribution centers', 'event logistics', 'catering logistics', 'inventory access', 'ad placements', 'international shipping', 'distribution centers', 'ecommerce', 'drop shipment', 'freight', 'shipping', 'transportation', 'outsourcing', 'global talent', 'supply chain management', 'call center operations', 'flexibility to scale', 'transportation', 'distribution']
+2025-04-05 23:28:46,371 - INFO - Processing category: procurement
+2025-04-05 23:28:46,371 - INFO - Clustering 38 keywords into 38 clusters for category: procurement
+2025-04-05 23:28:46,371 - INFO - Found 38 representative keywords for category: procurement
+2025-04-05 23:28:46,371 - INFO - Representative keywords: ['vendor management', 'sourcing', 'purchasing', 'vendor management', 'sourcing', 'negotiation', 'candidate screening', 'recruiting', 'vendor management', 'distributor partnerships', 'vendor management', 'supplier evaluation', 'supplier management', 'material orders', 'group purchasing contracts', 'vendor management', 'sourcing', 'negotiation', 'vendor management', 'supplier evaluation', 'supplier management', 'vendor negotiation', 'vendor management', 'sourcing', 'vendor management', 'contracts', 'vendor management', 'sourcing', 'vendor management', 'sourcing', 'supplier evaluation', 'vendor management', 'sourcing', 'supplier evaluation', 'negotiation', 'purchasing', 'contract management', 'cost analysis']
+2025-04-05 23:28:46,371 - INFO - Processing category: city
+2025-04-05 23:28:46,371 - INFO - Skipping clustering for category: city
+2025-04-05 23:28:46,371 - INFO - Processing category: country
+2025-04-05 23:28:46,371 - INFO - Skipping clustering for category: country
+2025-04-05 23:28:46,371 - INFO - Processing category: continent
+2025-04-05 23:28:46,371 - INFO - Skipping clustering for category: continent
+2025-04-05 23:28:46,371 - INFO - Processing category: capacity risk
+2025-04-05 23:28:46,371 - INFO - Clustering 68 keywords into 15 clusters for category: capacity risk
+2025-04-05 23:28:46,531 - INFO - Found 14 representative keywords for category: capacity risk
+2025-04-05 23:28:46,531 - INFO - Representative keywords: ['manufacturing bottleneck', 'production delays', 'capacity constraints', 'backorders', 'supply shortage', 'limited capacity', 'transaction costs', 'reduced risks', 'labor shortage', 'order backlog', 'surge in demand', 'warehouse capacity limits', 'production capacity', 'limited resources']
+2025-04-05 23:28:46,531 - INFO - Processing category: geopolitical risk
+2025-04-05 23:28:46,531 - INFO - Clustering 7 keywords into 7 clusters for category: geopolitical risk
+2025-04-05 23:28:46,531 - INFO - Found 7 representative keywords for category: geopolitical risk
+2025-04-05 23:28:46,531 - INFO - Representative keywords: ['political unrest', 'trade barriers', 'trade barriers', 'political unrest', 'regulatory uncertainty', 'trade barriers', 'regulatory uncertainty']
+2025-04-05 23:29:04,079 - INFO - Starting keyword clustering process
+2025-04-05 23:29:04,079 - INFO - Input folder: data/keywords
+2025-04-05 23:29:04,079 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:29:04,079 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:29:04,099 - INFO - Loaded 304 keywords for category: industries
+2025-04-05 23:29:04,099 - INFO - Loaded 476 keywords for category: services
+2025-04-05 23:29:04,099 - INFO - Loaded 82 keywords for category: materials
+2025-04-05 23:29:04,099 - INFO - Loaded 318 keywords for category: products
+2025-04-05 23:29:04,099 - INFO - Loaded 214 keywords for category: technology
+2025-04-05 23:29:04,099 - INFO - Loaded 38 keywords for category: logistics
+2025-04-05 23:29:04,099 - INFO - Loaded 38 keywords for category: procurement
+2025-04-05 23:29:04,099 - INFO - Loaded 290 keywords for category: city
+2025-04-05 23:29:04,099 - INFO - Loaded 121 keywords for category: country
+2025-04-05 23:29:04,099 - INFO - Loaded 97 keywords for category: continent
+2025-04-05 23:29:04,099 - INFO - Loaded 68 keywords for category: capacity risk
+2025-04-05 23:29:04,099 - INFO - Loaded 7 keywords for category: geopolitical risk
+2025-04-05 23:29:04,632 - INFO - Starting keyword clustering process
+2025-04-05 23:29:04,632 - INFO - Processing category: industries
+2025-04-05 23:29:04,632 - INFO - Clustering 304 keywords into 40 clusters for category: industries
+2025-04-05 23:29:04,944 - INFO - Found 40 representative keywords for category: industries
+2025-04-05 23:29:04,944 - INFO - Representative keywords: ['healthcare', 'finance', 'engineering', 'construction', 'transportation', 'environmental', 'insurance', 'entertainment', 'hospitality', 'wealth management', 'financial services', 'media', 'manufacturing', 'beverage distribution', 'retail', 'event management', 'education', 'automotive', 'real estate', 'medical imaging', 'telecom', 'energy', 'marketing', 'architecture', 'banking', 'life sciences', 'logistics', 'surgical robotics', 'geotechnical', 'environmental consultancy', 'language training', 'government', 'residential', 'chemical', 'business services', 'technology', 'staffing', 'radiology', 'defense', 'advertising']
+2025-04-05 23:29:04,944 - INFO - Processing category: services
+2025-04-05 23:29:04,944 - INFO - Clustering 476 keywords into 40 clusters for category: services
+2025-04-05 23:29:05,347 - INFO - Found 40 representative keywords for category: services
+2025-04-05 23:29:05,348 - INFO - Representative keywords: ['virtual care', 'consulting', 'campaign analysis', 'residential mortgages', 'customer acquisition', 'planning services', 'marketing', 'restaurant services', 'trade document management', 'training', 'healthcare market research', 'merchant services', 'engineering solutions', 'design', 'customer support', 'development', 'diagnostic imaging', 'industrial services', 'cyber security', 'financial education', 'accessories', 'project management', 'geotechnical services', 'personal banking', 'insurance', 'financial management', 'event planning', 'catering', 'health solutions', 'portfolio advisory', 'civil construction', 'technical staffing', 'nutrition classes', 'temporary staffing', 'restoration', 'screen printing', 'real estate brokerage', 'automation', 'asset management', 'on-demand care']
+2025-04-05 23:29:05,348 - INFO - Processing category: materials
+2025-04-05 23:29:05,348 - INFO - Clustering 82 keywords into 40 clusters for category: materials
+2025-04-05 23:29:05,607 - INFO - Found 40 representative keywords for category: materials
+2025-04-05 23:29:05,609 - INFO - Representative keywords: ['bottled water', 'gemstones', 'hardwood', 'disposables', 'ammunition', 'aluminum', 'corrugated graphite gasket', 'reflective markers', 'plastic-coated fabrics', 'stationery', 'graphite', 'batteries', 'beer', 'reagents', 'bread crumbs', 'credit cards', 'nail treatments', 'liquid fuels', 'gold', 'dual interface cards', 'landfill gas', 'educational texts', 'truck parts', 'passive spheres', 'luxury vinyl tile', 'note pads', 'door units', 'equipment', 'rubber', 'seat velours', 'human ipscs', 'synthetic fibers', 'emv contactless cards', 'groundwater amendments', 'medical printer paper', 'compressed fiber gaskets', 'disinfectants', 'wall coverings', 'coconut flakes', 'millwork']
+2025-04-05 23:29:05,609 - INFO - Processing category: products
+2025-04-05 23:29:05,609 - INFO - Clustering 318 keywords into 40 clusters for category: products
+2025-04-05 23:29:05,902 - INFO - Found 40 representative keywords for category: products
+2025-04-05 23:29:05,903 - INFO - Representative keywords: ['loans', 'jewelry', 'pulsar platform', 'savings accounts', 'accessories', 'market intelligence platform', 'production data and analytics tool', 'universal life', 'mri', 'residential properties', 'payment cards', 'hotel rooms', 'urology', 'specialty products', 'tire assemblies', 'pet/ct', 'doors', 'beer', 'hedge funds', 'electric trucks', 'sauced shrimp', 'steam enhanced extraction', 'wheels', 'home insurance', 'friction conveyor system', 'family plans', 'ultrasound', 'dining options', 'water quality investigations', 'unified data trust platform', 'data products', 'change', 'checking accounts', 'contract', 'cardiac cells', 'golf memberships', 'janitorial supplies', 'polaris vega', 'emergency notification system', 'thermal conduction heating']
+2025-04-05 23:29:05,903 - INFO - Processing category: technology
+2025-04-05 23:29:05,903 - INFO - Clustering 214 keywords into 40 clusters for category: technology
+2025-04-05 23:29:06,219 - INFO - Found 40 representative keywords for category: technology
+2025-04-05 23:29:06,219 - INFO - Representative keywords: ['health records access', 'online access', 'machine design', 'ai models', 'advanced manufacturing', 'advanced solutions', 'data governance program', 'data analytics', 'advanced technologies', 'data sophistication', 'language detection', 'digital banking', 'data security', 'secure messaging', 'state-of-the-art facilities', 'advanced shipping notice registration', 'financial calculators', 'optical navigation', 'color lock system', 'assisted listening devices', 'automation', 'transactional portal', 'ballistic calculators', 'online booking system', 'advanced imaging technology', 'wireless tracking', 'cloud migrations', 'third party connectors', 'cloud-based', 'data monitoring', 'lead conversion', 'mobile app', 'digital print technology', 'data collection', 'proprietary tech', 'data retrieval', 'information technology', 'knitting techniques', 'advanced rifle cartridge', 'customizable dashboards']
+2025-04-05 23:29:06,220 - INFO - Processing category: logistics
+2025-04-05 23:29:06,220 - INFO - Clustering 38 keywords into 38 clusters for category: logistics
+2025-04-05 23:29:06,220 - INFO - Found 38 representative keywords for category: logistics
+2025-04-05 23:29:06,220 - INFO - Representative keywords: ['freight deliveries', 'business trips', 'travel arrangements', 'network device management', 'cable plant monitoring', 'warehouse', 'distribution', 'global trade', 'payment collection', 'trade documentation', 'nationwide network', 'shipping', 'distribution', 'integrated logistics', 'shipping', 'distribution', 'shuttle service', 'transportation', 'airport transfers', 'distribution centers', 'event logistics', 'catering logistics', 'inventory access', 'ad placements', 'international shipping', 'distribution centers', 'ecommerce', 'drop shipment', 'freight', 'shipping', 'transportation', 'outsourcing', 'global talent', 'supply chain management', 'call center operations', 'flexibility to scale', 'transportation', 'distribution']
+2025-04-05 23:29:06,220 - INFO - Processing category: procurement
+2025-04-05 23:29:06,220 - INFO - Clustering 38 keywords into 38 clusters for category: procurement
+2025-04-05 23:29:06,220 - INFO - Found 38 representative keywords for category: procurement
+2025-04-05 23:29:06,220 - INFO - Representative keywords: ['vendor management', 'sourcing', 'purchasing', 'vendor management', 'sourcing', 'negotiation', 'candidate screening', 'recruiting', 'vendor management', 'distributor partnerships', 'vendor management', 'supplier evaluation', 'supplier management', 'material orders', 'group purchasing contracts', 'vendor management', 'sourcing', 'negotiation', 'vendor management', 'supplier evaluation', 'supplier management', 'vendor negotiation', 'vendor management', 'sourcing', 'vendor management', 'contracts', 'vendor management', 'sourcing', 'vendor management', 'sourcing', 'supplier evaluation', 'vendor management', 'sourcing', 'supplier evaluation', 'negotiation', 'purchasing', 'contract management', 'cost analysis']
+2025-04-05 23:29:06,220 - INFO - Processing category: city
+2025-04-05 23:29:06,220 - INFO - Skipping clustering for category: city
+2025-04-05 23:29:06,220 - INFO - Processing category: country
+2025-04-05 23:29:06,220 - INFO - Skipping clustering for category: country
+2025-04-05 23:29:06,220 - INFO - Processing category: continent
+2025-04-05 23:29:06,220 - INFO - Skipping clustering for category: continent
+2025-04-05 23:29:06,220 - INFO - Processing category: capacity risk
+2025-04-05 23:29:06,220 - INFO - Clustering 68 keywords into 15 clusters for category: capacity risk
+2025-04-05 23:29:06,323 - INFO - Found 14 representative keywords for category: capacity risk
+2025-04-05 23:29:06,324 - INFO - Representative keywords: ['manufacturing bottleneck', 'production delays', 'capacity constraints', 'backorders', 'supply shortage', 'limited capacity', 'transaction costs', 'reduced risks', 'labor shortage', 'order backlog', 'surge in demand', 'warehouse capacity limits', 'production capacity', 'limited resources']
+2025-04-05 23:29:06,324 - INFO - Processing category: geopolitical risk
+2025-04-05 23:29:06,324 - INFO - Clustering 7 keywords into 7 clusters for category: geopolitical risk
+2025-04-05 23:29:06,324 - INFO - Found 7 representative keywords for category: geopolitical risk
+2025-04-05 23:29:06,324 - INFO - Representative keywords: ['political unrest', 'trade barriers', 'trade barriers', 'political unrest', 'regulatory uncertainty', 'trade barriers', 'regulatory uncertainty']
+2025-04-05 23:31:41,075 - INFO - Starting keyword clustering process
+2025-04-05 23:31:41,076 - INFO - Input folder: data/keywords
+2025-04-05 23:31:41,076 - INFO - Output folder: carlos/keywords_clustered
+2025-04-05 23:31:41,076 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-05 23:31:41,111 - INFO - Loaded 295 keywords for category: industries
+2025-04-05 23:31:41,111 - INFO - Loaded 477 keywords for category: services
+2025-04-05 23:31:41,111 - INFO - Loaded 82 keywords for category: materials
+2025-04-05 23:31:41,111 - INFO - Loaded 322 keywords for category: products
+2025-04-05 23:31:41,111 - INFO - Loaded 213 keywords for category: technology
+2025-04-05 23:31:41,111 - INFO - Loaded 31 keywords for category: logistics
+2025-04-05 23:31:41,111 - INFO - Loaded 34 keywords for category: procurement
+2025-04-05 23:31:41,111 - INFO - Loaded 276 keywords for category: city
+2025-04-05 23:31:41,111 - INFO - Loaded 118 keywords for category: country
+2025-04-05 23:31:41,111 - INFO - Loaded 95 keywords for category: continent
+2025-04-05 23:31:41,111 - INFO - Loaded 60 keywords for category: capacity risk
+2025-04-05 23:31:41,111 - INFO - Loaded 7 keywords for category: geopolitical risk
+2025-04-05 23:31:41,666 - INFO - Starting keyword clustering process
+2025-04-05 23:31:41,666 - INFO - Processing category: industries
+2025-04-05 23:31:41,666 - INFO - Clustering 295 keywords into 40 clusters for category: industries
+2025-04-05 23:31:41,905 - INFO - Found 40 representative keywords for category: industries
+2025-04-05 23:31:41,905 - INFO - Representative keywords: ['community', 'information technology', 'hospitality', 'healthcare', 'banking', 'logistics', 'engineering', 'manufacturing', 'environmental consultancy', 'steel', 'telecommunications', 'real estate', 'construction', 'government', 'entertainment', 'event management', 'radiology', 'energy', 'language training', 'higher education', 'retail', 'marketing', 'finance', 'automotive', 'insurance', 'education', 'multi-family housing', 'consulting', 'geotechnical', 'beverage distribution', 'media', 'architecture', 'life sciences', 'process heating', 'residential', 'financial services', 'wastewater treatment', 'network management', 'transportation', 'environmental']
+2025-04-05 23:31:41,905 - INFO - Processing category: services
+2025-04-05 23:31:41,905 - INFO - Clustering 477 keywords into 40 clusters for category: services
+2025-04-05 23:31:42,307 - INFO - Found 40 representative keywords for category: services
+2025-04-05 23:31:42,308 - INFO - Representative keywords: ['health solutions', 'marketing', 'civil engineering', 'consulting', 'escrow', 'technical staffing', 'litigation', 'investment management', 'merchant services', 'engineering solutions', 'insurance', 'training', 'inventory management', 'environmental management', 'custom services', 'personal banking', 'customer service', 'logistics support', 'event planning', 'personal loans', 'relocation', 'market research', 'management', 'theranostics', 'claims processing', 'repair', 'real estate brokerage', 'student visa assistance', 'data modernization', 'geotechnical services', 'diagnostic imaging', 'transportation', 'property management', 'cathodic protection', 'fraud prevention', 'trade document management', 'design', 'specialist services', 'catering', 'spa services']
+2025-04-05 23:31:42,308 - INFO - Processing category: materials
+2025-04-05 23:31:42,308 - INFO - Clustering 82 keywords into 40 clusters for category: materials
+2025-04-05 23:31:42,486 - INFO - Found 40 representative keywords for category: materials
+2025-04-05 23:31:42,486 - INFO - Representative keywords: ['bottled water', 'gemstones', 'hardwood', 'disposables', 'ammunition', 'aluminum', 'corrugated graphite gasket', 'reflective markers', 'plastic-coated fabrics', 'stationery', 'graphite', 'batteries', 'beer', 'reagents', 'bread crumbs', 'credit cards', 'nail treatments', 'liquid fuels', 'gold', 'dual interface cards', 'landfill gas', 'educational texts', 'truck parts', 'passive spheres', 'luxury vinyl tile', 'note pads', 'door units', 'equipment', 'rubber', 'seat velours', 'human ipscs', 'synthetic fibers', 'emv contactless cards', 'groundwater amendments', 'medical printer paper', 'compressed fiber gaskets', 'disinfectants', 'wall coverings', 'coconut flakes', 'millwork']
+2025-04-05 23:31:42,486 - INFO - Processing category: products
+2025-04-05 23:31:42,486 - INFO - Clustering 322 keywords into 40 clusters for category: products
+2025-04-05 23:31:42,797 - INFO - Found 40 representative keywords for category: products
+2025-04-05 23:31:42,797 - INFO - Representative keywords: ['electric trucks', 'necklaces', 'loans', 'checking accounts', 'value shopper', 'market intelligence platform', 'fcm platform', 'ultrasound', 'contract', 'medical equipment', 'senior housing', 'hotel rooms', 'commercial properties', 'beer', 'friction conveyor system', 'apartment homes', 'pulsar core', 'wheels', 'gift cards', 'microsoft dynamics 365', 'family plans', 'production data and analytics tool', 'ammunition', 'home insurance', 'mri', 'sauced shrimp', 'calcium scoring exams', 'environmental studies', 'credit cards', 'robotic packaging cell', 'steam enhanced extraction', 'data products', 'accessories', 'hedge funds', 'wine', 'continuous glucose monitors', 'adas calibration tools', 'ai voice receptionist', 'pet/ct', 'crystal']
+2025-04-05 23:31:42,798 - INFO - Processing category: technology
+2025-04-05 23:31:42,798 - INFO - Clustering 213 keywords into 40 clusters for category: technology
+2025-04-05 23:31:43,124 - INFO - Found 40 representative keywords for category: technology
+2025-04-05 23:31:43,124 - INFO - Representative keywords: ['secure messaging', 'digitalization', 'cutting-edge technology', 'mobile app', 'data collection', 'advanced solutions', '24/7 learning system', 'analytics', 'online booking', 'automated data discovery', 'artificial intelligence', 'database management systems', 'digital experience', 'advanced imaging technology', 'closed captioning', 'data governance program', 'digital privacy', 'language detection', 'chaos engineering', 'cybersecurity', 'data analytics', 'financial planning portal', 'automation', 'wireless tracking', 'integrated gis mapping', 'advanced manufacturing', 'online banking', 'advanced print equipment', 'financial calculators', 'live tracking', 'lead conversion', 'ballistic calculators', 'gmp production facility', 'cloud-based', 'information technology', 'fluid handling', 'environmental fracturing', 'transactional portal', 'lock-n-load technology', 'customizable dashboards']
+2025-04-05 23:31:43,124 - INFO - Processing category: logistics
+2025-04-05 23:31:43,124 - INFO - Clustering 31 keywords into 31 clusters for category: logistics
+2025-04-05 23:31:43,124 - INFO - Found 31 representative keywords for category: logistics
+2025-04-05 23:31:43,124 - INFO - Representative keywords: ['freight deliveries', 'business trips', 'travel arrangements', 'network device management', 'cable plant monitoring', 'warehouse', 'distribution', 'global trade', 'payment collection', 'trade documentation', 'nationwide network', 'shipping', 'distribution', 'integrated logistics', 'shipping', 'distribution', 'shuttle service', 'transportation', 'airport transfers', 'distribution centers', 'event logistics', 'catering logistics', 'inventory access', 'ad placements', 'international shipping', 'distribution centers', 'ecommerce', 'drop shipment', 'freight', 'shipping', 'transportation']
+2025-04-05 23:31:43,124 - INFO - Processing category: procurement
+2025-04-05 23:31:43,124 - INFO - Clustering 34 keywords into 34 clusters for category: procurement
+2025-04-05 23:31:43,124 - INFO - Found 34 representative keywords for category: procurement
+2025-04-05 23:31:43,124 - INFO - Representative keywords: ['vendor management', 'sourcing', 'purchasing', 'vendor management', 'sourcing', 'negotiation', 'candidate screening', 'recruiting', 'vendor management', 'distributor partnerships', 'vendor management', 'supplier evaluation', 'vendor management', 'sourcing', 'negotiation', 'supplier management', 'material orders', 'group purchasing contracts', 'vendor management', 'sourcing', 'negotiation', 'vendor management', 'supplier evaluation', 'supplier management', 'vendor negotiation', 'vendor management', 'sourcing', 'vendor management', 'contracts', 'vendor management', 'sourcing', 'vendor management', 'sourcing', 'supplier evaluation']
+2025-04-05 23:31:43,124 - INFO - Processing category: city
+2025-04-05 23:31:43,124 - INFO - Skipping clustering for category: city
+2025-04-05 23:31:43,124 - INFO - Processing category: country
+2025-04-05 23:31:43,124 - INFO - Skipping clustering for category: country
+2025-04-05 23:31:43,124 - INFO - Processing category: continent
+2025-04-05 23:31:43,124 - INFO - Skipping clustering for category: continent
+2025-04-05 23:31:43,124 - INFO - Processing category: capacity risk
+2025-04-05 23:31:43,124 - INFO - Clustering 60 keywords into 15 clusters for category: capacity risk
+2025-04-05 23:31:43,257 - INFO - Found 12 representative keywords for category: capacity risk
+2025-04-05 23:31:43,257 - INFO - Representative keywords: ['limited resources', 'production delays', 'backorders', 'limited capacity', 'capacity constraints', 'manufacturing bottleneck', 'transaction costs', 'surge in demand', 'reduced risks', 'supply shortage', 'order backlog', 'production capacity']
+2025-04-05 23:31:43,257 - INFO - Processing category: geopolitical risk
+2025-04-05 23:31:43,257 - INFO - Clustering 7 keywords into 7 clusters for category: geopolitical risk
+2025-04-05 23:31:43,257 - INFO - Found 7 representative keywords for category: geopolitical risk
+2025-04-05 23:31:43,257 - INFO - Representative keywords: ['political unrest', 'trade barriers', 'trade barriers', 'political unrest', 'regulatory uncertainty', 'trade barriers', 'regulatory uncertainty']
+2025-04-05 23:31:43,260 - INFO - Creating databases in carlos/keywords_clustered
+2025-04-05 23:31:43,260 - INFO - Creating database for category industries at carlos/keywords_clustered/industries.db
+2025-04-05 23:31:43,268 - INFO - Completed database creation for category industries
+2025-04-05 23:31:43,268 - INFO - Creating database for category services at carlos/keywords_clustered/services.db
+2025-04-05 23:31:43,269 - INFO - Completed database creation for category services
+2025-04-05 23:31:43,269 - INFO - Creating database for category materials at carlos/keywords_clustered/materials.db
+2025-04-05 23:31:43,270 - INFO - Completed database creation for category materials
+2025-04-05 23:31:43,270 - INFO - Creating database for category products at carlos/keywords_clustered/products.db
+2025-04-05 23:31:43,272 - INFO - Completed database creation for category products
+2025-04-05 23:31:43,272 - INFO - Creating database for category technology at carlos/keywords_clustered/technology.db
+2025-04-05 23:31:43,273 - INFO - Completed database creation for category technology
+2025-04-05 23:31:43,273 - INFO - Creating database for category logistics at carlos/keywords_clustered/logistics.db
+2025-04-05 23:31:43,274 - INFO - Completed database creation for category logistics
+2025-04-05 23:31:43,274 - INFO - Creating database for category procurement at carlos/keywords_clustered/procurement.db
+2025-04-05 23:31:43,275 - INFO - Completed database creation for category procurement
+2025-04-05 23:31:43,275 - INFO - Creating database for category city at carlos/keywords_clustered/city.db
+2025-04-05 23:31:43,276 - INFO - Completed database creation for category city
+2025-04-05 23:31:43,277 - INFO - Creating database for category country at carlos/keywords_clustered/country.db
+2025-04-05 23:31:43,279 - INFO - Completed database creation for category country
+2025-04-05 23:31:43,279 - INFO - Creating database for category continent at carlos/keywords_clustered/continent.db
+2025-04-05 23:31:43,280 - INFO - Completed database creation for category continent
+2025-04-05 23:31:43,280 - INFO - Creating database for category capacity risk at carlos/keywords_clustered/capacity risk.db
+2025-04-05 23:31:43,280 - INFO - Completed database creation for category capacity risk
+2025-04-05 23:31:43,280 - INFO - Creating database for category geopolitical risk at carlos/keywords_clustered/geopolitical risk.db
+2025-04-05 23:31:43,281 - INFO - Completed database creation for category geopolitical risk
+2025-04-05 23:31:43,281 - INFO - Keyword clustering process completed successfully
+2025-04-06 00:01:52,618 - INFO - Starting keyword clustering process
+2025-04-06 00:01:52,618 - INFO - Input folder: data/keywords
+2025-04-06 00:01:52,618 - INFO - Output folder: carlos/keywords_clustered
+2025-04-06 00:01:52,618 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-06 00:01:54,449 - INFO - Loaded 45744 keywords for category: industries
+2025-04-06 00:01:54,449 - INFO - Loaded 66824 keywords for category: services
+2025-04-06 00:01:54,449 - INFO - Loaded 9521 keywords for category: materials
+2025-04-06 00:01:54,449 - INFO - Loaded 39041 keywords for category: products
+2025-04-06 00:01:54,449 - INFO - Loaded 33786 keywords for category: technology
+2025-04-06 00:01:54,449 - INFO - Loaded 7530 keywords for category: logistics
+2025-04-06 00:01:54,449 - INFO - Loaded 5143 keywords for category: procurement
+2025-04-06 00:01:54,449 - INFO - Loaded 31969 keywords for category: city
+2025-04-06 00:01:54,449 - INFO - Loaded 14906 keywords for category: country
+2025-04-06 00:01:54,449 - INFO - Loaded 12240 keywords for category: continent
+2025-04-06 00:01:54,449 - INFO - Loaded 10832 keywords for category: capacity risk
+2025-04-06 00:01:54,449 - INFO - Loaded 1952 keywords for category: geopolitical risk
+2025-04-06 00:01:54,449 - INFO - Loaded 21 keywords for category: regions
+2025-04-06 00:01:54,989 - INFO - Starting keyword clustering process
+2025-04-06 00:01:54,989 - INFO - Processing category: industries
+2025-04-06 00:01:54,992 - INFO - Clustering 45744 keywords into 40 clusters for category: industries
+2025-04-06 00:02:42,014 - INFO - Found 40 representative keywords for category: industries
+2025-04-06 00:02:42,016 - INFO - Representative keywords: ['manufacturing', 'healthcare', 'banking', 'cyber security', 'commercial', 'restaurant', 'travel', 'financial services', 'entertainment', 'energy', 'pharmaceutical', 'education', 'construction', 'engineering', 'government', 'hospitality', 'retail', 'property management', 'technology', 'business', 'automotive', 'food services', 'food and beverage', 'real estate', 'medicine', 'media', 'insurance', 'aerospace', 'renewable energy', 'nonprofit', 'non-profit', 'oil & gas', 'telecommunications', 'publishing', 'chemical and materials', 'finance', 'logistics', 'utilities', 'agriculture', 'mining']
+2025-04-06 00:02:42,055 - INFO - Processing category: services
+2025-04-06 00:02:42,066 - INFO - Clustering 66824 keywords into 40 clusters for category: services
+2025-04-06 00:14:46,051 - INFO - Starting keyword clustering process
+2025-04-06 00:14:46,051 - INFO - Input folder: data/keywords
+2025-04-06 00:14:46,051 - INFO - Output folder: carlos/keywords_clustered
+2025-04-06 00:14:46,051 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-06 00:14:47,901 - INFO - Loaded 45744 keywords for category: industries
+2025-04-06 00:14:47,901 - INFO - Loaded 66824 keywords for category: services
+2025-04-06 00:14:47,901 - INFO - Loaded 9521 keywords for category: materials
+2025-04-06 00:14:47,901 - INFO - Loaded 39041 keywords for category: products
+2025-04-06 00:14:47,901 - INFO - Loaded 33786 keywords for category: technology
+2025-04-06 00:14:47,901 - INFO - Loaded 7530 keywords for category: logistics
+2025-04-06 00:14:47,901 - INFO - Loaded 5143 keywords for category: procurement
+2025-04-06 00:14:47,901 - INFO - Loaded 31969 keywords for category: city
+2025-04-06 00:14:47,901 - INFO - Loaded 14906 keywords for category: country
+2025-04-06 00:14:47,901 - INFO - Loaded 12240 keywords for category: continent
+2025-04-06 00:14:47,901 - INFO - Loaded 10832 keywords for category: capacity risk
+2025-04-06 00:14:47,901 - INFO - Loaded 1952 keywords for category: geopolitical risk
+2025-04-06 00:14:47,901 - INFO - Loaded 21 keywords for category: regions
+2025-04-06 00:14:48,421 - INFO - Starting keyword clustering process
+2025-04-06 00:14:48,421 - INFO - Processing category: industries
+2025-04-06 00:14:48,424 - INFO - Clustering 45744 keywords into 40 clusters for category: industries
+2025-04-06 00:15:27,757 - INFO - Found 40 representative keywords for category: industries
+2025-04-06 00:15:27,759 - INFO - Representative keywords: ['manufacturing', 'healthcare', 'banking', 'cyber security', 'commercial', 'restaurant', 'travel', 'financial services', 'entertainment', 'energy', 'pharmaceutical', 'education', 'construction', 'engineering', 'government', 'hospitality', 'retail', 'property management', 'technology', 'business', 'automotive', 'food services', 'food and beverage', 'real estate', 'medicine', 'media', 'insurance', 'aerospace', 'renewable energy', 'nonprofit', 'non-profit', 'oil & gas', 'telecommunications', 'publishing', 'chemical and materials', 'finance', 'logistics', 'utilities', 'agriculture', 'mining']
+2025-04-06 00:15:27,797 - INFO - Processing category: services
+2025-04-06 00:15:27,809 - INFO - Clustering 66824 keywords into 40 clusters for category: services
+2025-04-06 00:37:20,325 - INFO - Starting keyword clustering process
+2025-04-06 00:37:20,325 - INFO - Input folder: data/keywords
+2025-04-06 00:37:20,325 - INFO - Output folder: carlos/keywords_clustered
+2025-04-06 00:37:20,325 - INFO - Cluster configuration: {'industries': 40, 'services': 40, 'materials': 40, 'products': 40, 'technology': 40, 'logistics': 40, 'procurement': 40, 'capacity risk': 15, 'geopolitical risk': 15}
+2025-04-06 00:37:22,515 - INFO - Loaded 45744 keywords for category: industries
+2025-04-06 00:37:22,515 - INFO - Loaded 66824 keywords for category: services
+2025-04-06 00:37:22,515 - INFO - Loaded 9521 keywords for category: materials
+2025-04-06 00:37:22,515 - INFO - Loaded 39041 keywords for category: products
+2025-04-06 00:37:22,515 - INFO - Loaded 33786 keywords for category: technology
+2025-04-06 00:37:22,515 - INFO - Loaded 7530 keywords for category: logistics
+2025-04-06 00:37:22,515 - INFO - Loaded 5143 keywords for category: procurement
+2025-04-06 00:37:22,515 - INFO - Loaded 31969 keywords for category: city
+2025-04-06 00:37:22,515 - INFO - Loaded 14906 keywords for category: country
+2025-04-06 00:37:22,515 - INFO - Loaded 12240 keywords for category: continent
+2025-04-06 00:37:22,515 - INFO - Loaded 10832 keywords for category: capacity risk
+2025-04-06 00:37:22,515 - INFO - Loaded 1952 keywords for category: geopolitical risk
+2025-04-06 00:37:22,515 - INFO - Loaded 21 keywords for category: regions
+2025-04-06 00:37:23,557 - INFO - Starting keyword clustering process
+2025-04-06 00:37:23,557 - INFO - Processing category: industries
+2025-04-06 00:37:23,561 - INFO - Clustering 45744 keywords into 40 clusters for category: industries
