@@ -70,12 +70,11 @@ def process_batch(texts: List[str], metadata: List[Tuple[str, str]], batch_id: i
     try:
         # Tokenize sentences in smaller chunks to avoid memory issues
         print("Starting tokenization...")
-        max_length = 512  # Limit token length
+        #max_length = 1024  # Limit token length
         encoded_input = tokenizer(
             texts,
             padding=True,
             truncation=True,
-            max_length=max_length,
             return_tensors='pt'
         )
         tokenize_time = time.time()
@@ -159,7 +158,7 @@ def main():
     )
 
     data_dir = Path("data_clean_3")
-    batch_size = 128
+    batch_size = 512
     
     # Get all JSON files
     json_files = list(data_dir.glob("*.json"))
