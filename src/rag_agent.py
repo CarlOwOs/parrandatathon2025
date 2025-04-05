@@ -11,7 +11,7 @@ load_dotenv()
 
 # Initialize ChromaDB
 chroma_client = chromadb.PersistentClient(
-    path="data/dev_chroma_db",
+    path="chromas/home_chroma_db_openai",
 )
 
 # Initialize OpenAI models
@@ -36,7 +36,7 @@ class AgentState(TypedDict):
 def retrieve_docs(state: AgentState) -> AgentState:
     """Retrieve relevant documents from ChromaDB."""
     try:
-        collection = chroma_client.get_collection(name="dev_embedding_db")
+        collection = chroma_client.get_collection(name="home_embedding_db")
     except Exception as e:
         print(f"Error getting collection: {e}")
         raise
@@ -127,7 +127,7 @@ def run_rag(query: str, system_prompt: str) -> str:
 
 # Example usage
 if __name__ == "__main__":
-    query = "Give me the companies based in the UK"
+    query = "Give me the companies based in Spain"
     print(f"Query: {query}")
     system_prompt = "You are a helpful assistant that answers questions based on the provided context."
     
