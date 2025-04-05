@@ -82,10 +82,14 @@ Please evaluate if the original question has been answered and provide:
             feedback=evaluation,
             conversation_history=updated_history
         )
+
+        print("is answered", is_answered)
+        print("confidence score", confidence_score)
         
         # Update state
         new_state = state.copy()
         new_state.update(output.dict())
+        # print("IS IT ANSWERED?", new_state["is_answered"])
         
         return new_state
     

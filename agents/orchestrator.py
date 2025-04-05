@@ -52,7 +52,7 @@ For each query, you should decide:
         
         # Get response from LLM
         response = llm.invoke(messages)
-        print(f"Orchestrator Response: {response}")
+        # print(f"Orchestrator Response: {response}")
         
         # Parse the response to create a structured plan
         # For simplicity, we'll use a basic structure

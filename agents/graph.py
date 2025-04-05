@@ -70,9 +70,7 @@ def create_agent_graph(
     #     return "base"
     def should_continue(state: dict) -> str:
         typed_state = AgentState(**state)
-        print(dir(typed_state))
-        print(typed_state)
-        if typed_state.is_answered and (typed_state.confidence_score or 0) >= 0.7:
+        if typed_state["is_answered"] and (typed_state["confidence_score"] or 0) >= 0.7:
             return "end"
         return "base"
     
@@ -114,7 +112,7 @@ def process_query(
     # final_state = AgentState(**graph.invoke(initial_state))
     
     # Extract results
-    response = final_state.synthesized_response
-    updated_history = final_state.conversation_history
+    response = final_state["synthesized_response"]
+    updated_history = final_state["conversation_history"]
     
     return response, updated_history

@@ -39,7 +39,7 @@ Be concise and focus on clarifying the intent of the query."""
         # Create messages for the LLM
         messages = [
             SystemMessage(content=system_prompt),
-            HumanMessage(content=f"User query: {query}\n\nEnhance this query to make it more specific and searchable.")
+            HumanMessage(content=f"User query: {query}\n\nEnhance this query to make it more specific and searchable.\n The conversation history is: {conversation_history}")
         ]
         
         # Get response from LLM
