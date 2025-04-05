@@ -5,6 +5,60 @@ from pydantic import BaseModel, Field
 from .state import AgentState
 import sqlite3
 import json
+import chromadb
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_openai import OpenAIEmbeddings
+import os
+
+chroma_client = chromadb.PersistentClient(
+    path="C:\\Users\\m50038244\\parrandatathon\\data\\home_chroma_db",
+)
+
+def retrieve_docs(state: AgentState, chroma_client: chromadb.PersistentClient, llm: ChatOpenAI, embeddings: OpenAIEmbeddings) -> AgentState:
+    """Retrieve relevant documents from ChromaDB."""
+    try:
+        collection = chroma_client.get_collection(name="home_embedding_db")
+    except Exception as e:
+        print(f"Error getting collection: {e}")
+        raise
+    
+    # Reformulate the query to be more explicit
+    reformulation_prompt = ChatPromptTemplate.from_messages([
+        ("system", """You are a query reformulation expert. Your task is to make the query more explicit and detailed 
+        for better document retrieval. Keep the core meaning but make it more specific about what information is being sought.
+        Return only the reformulated query, nothing else."""),
+        ("human", "Original query: {query}")
+    ])
+    
+    reformulated_query = (reformulation_prompt | llm).invoke({"query": state["query"]}).content
+    
+    print("The reformulated query is: ", reformulated_query)
+
+    # Get embeddings for the reformulated query
+    query_embedding = embeddings.embed_query(reformulated_query)
+    
+    # Search for relevant documents
+    results = collection.query(
+        query_embeddings=[query_embedding],
+        n_results=10
+    )
+
+    print("The results are: ", results)
+    
+    # Extract document texts
+    # retrieved_docs = results["documents"][0] if results["documents"] else []
+    
+    ids = results["ids"][0] if results["ids"] else []
+    documents = results["documents"][0] if results["documents"] else []
+    scores = results["distances"][0] if results["distances"] else []
+
+    results = {
+        "ids": ids,
+        "documents": documents,
+        "scores": scores
+    }
+    
+    return results
 
 class RetrievalResult(BaseModel):
     """Model for a single retrieval result."""
@@ -28,6 +82,11 @@ class RetrieverOutput(BaseModel):
 # def create_retriever(llm: ChatOpenAI, vectorstore: Chroma, db_path: str):
 def create_retriever(llm: ChatOpenAI, chroma_db_path: str):
     """Create the retriever agent with RAG and SQL capabilities."""
+
+    embeddings = OpenAIEmbeddings(
+            model="text-embedding-3-small",
+            api_key=os.getenv("OPENAI_API_KEY")
+        )
     
     system_prompt = """You are a retrieval specialist with expertise in both vector search and SQL queries.
 Your role is to:
@@ -65,14 +124,15 @@ Your role is to:
             rag_params = retrieval_plan.get("rag_params", {})
             top_k = rag_params.get("top_k", 5)
             threshold = rag_params.get("threshold", 0.7)
+            collection_name = rag_params.get("collection_name", "dev_embedding_db")
             
-            ####################################
             # Perform vector search
-            ####################################
-            docs = []
+            results = retrieve_docs(state, chroma_client, llm, embeddings)
+            docs = results["documents"]
+            scores = results["scores"]
             
             # Add RAG results
-            for doc, score in docs:
+            for doc, score in zip(docs, scores):
                 if score >= threshold:
                     retrieval_results.append(
                         RetrievalResult(
