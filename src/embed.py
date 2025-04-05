@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Dict, List, Optional
 import h5py
 import numpy as np
+import tiktoken
 
 import openai
 from dotenv import load_dotenv
@@ -13,6 +14,17 @@ load_dotenv()
 
 # Initialize OpenAI client
 client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+# Initialize tokenizer
+tokenizer = tiktoken.get_encoding("cl100k_base")
+
+def truncate_text(text: str, max_tokens: int = 8191) -> str:
+    """Truncate text to the maximum number of tokens."""
+    tokens = tokenizer.encode(text)
+    if len(tokens) > max_tokens:
+        truncated_tokens = tokens[:max_tokens]
+        return tokenizer.decode(truncated_tokens)
+    return text
 
 def get_first_url_text(data: Dict) -> Optional[str]:
     """Extract the text content of the first URL from the text_by_page_url field."""
@@ -34,6 +46,11 @@ def create_embedding(text: str) -> List[float]:
 
 def process_json_file(json_path: Path, output_path: Path) -> None:
     """Process a single company JSON file and save its embedding to an HDF5 file."""
+    # Skip if output file already exists
+    if output_path.exists():
+        print(f"Skipping {json_path.name} as output already exists")
+        return
+        
     # Read the JSON file
     with open(json_path, 'r') as f:
         data = json.load(f)
@@ -44,6 +61,9 @@ def process_json_file(json_path: Path, output_path: Path) -> None:
         if not text:
             raise ValueError("No text found")
 
+        # Truncate text if necessary
+        text = truncate_text(text)
+        
         # Create embedding
         embedding = create_embedding(text)
         

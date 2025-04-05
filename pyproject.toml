@@ -14,4 +14,5 @@ dependencies = [
     "h5py>=3.13.0",
     "langchain-openai>=0.3.12",
     "chromadb>=1.0.0",
+    "aiohttp>=3.11.16",
 ]
