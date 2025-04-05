@@ -3,7 +3,6 @@ import os
 import h5py
 import json
 from typing import Dict, Optional
-from contextlib import suppress
 
 def get_first_url_text(data: Dict) -> Optional[str]:
     """Extract the text content of the first URL from the text_by_page_url field."""

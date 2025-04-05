@@ -13,4 +13,5 @@ dependencies = [
     "rank-bm25>=0.2.2",
     "h5py>=3.13.0",
     "langchain-openai>=0.3.12",
+    "chromadb>=1.0.0",
 ]
