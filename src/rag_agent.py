@@ -5,13 +5,14 @@ import chromadb
 from langgraph.graph import StateGraph
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.messages import HumanMessage, AIMessage
 
 # Load environment variables
 load_dotenv()
 
 # Initialize ChromaDB
 chroma_client = chromadb.PersistentClient(
-    path="chromas/home_chroma_db_openai",
+    path="data/home_chroma_db",
 )
 
 # Initialize OpenAI models
@@ -31,6 +32,7 @@ class AgentState(TypedDict):
     system_prompt: str
     retrieved_docs: List[str]
     response: str
+    chat_history: List[dict]
 
 # Define the nodes
 def retrieve_docs(state: AgentState) -> AgentState:
@@ -46,10 +48,14 @@ def retrieve_docs(state: AgentState) -> AgentState:
         ("system", """You are a query reformulation expert. Your task is to make the query more explicit and detailed 
         for better document retrieval. Keep the core meaning but make it more specific about what information is being sought.
         Return only the reformulated query, nothing else."""),
+        MessagesPlaceholder(variable_name="chat_history"),
         ("human", "Original query: {query}")
     ])
     
-    reformulated_query = (reformulation_prompt | llm).invoke({"query": state["query"]}).content
+    reformulated_query = (reformulation_prompt | llm).invoke({
+        "query": state["query"],
+        "chat_history": state["chat_history"]
+    }).content
     
     # Get embeddings for the reformulated query
     query_embedding = embeddings.embed_query(reformulated_query)
@@ -62,6 +68,8 @@ def retrieve_docs(state: AgentState) -> AgentState:
     
     # Extract document texts
     retrieved_docs = results["documents"][0] if results["documents"] else []
+
+    print("Retrieved docs: ", retrieved_docs)
     
     return {**state, "retrieved_docs": retrieved_docs}
 
@@ -89,10 +97,16 @@ def generate_response(state: AgentState) -> AgentState:
     response = chain.invoke({
         "query": state["query"],
         "context": context,
-        "chat_history": []
+        "chat_history": state["chat_history"]
     })
     
-    return {**state, "response": response.content}
+    # Update chat history with the new interaction
+    updated_history = state["chat_history"] + [
+        {"role": "human", "content": state["query"]},
+        {"role": "assistant", "content": response.content}
+    ]
+    
+    return {**state, "response": response.content, "chat_history": updated_history}
 
 # Create the graph
 workflow = StateGraph(AgentState)
@@ -117,7 +131,8 @@ def run_rag(query: str, system_prompt: str) -> str:
         "query": query,
         "system_prompt": system_prompt,
         "retrieved_docs": [],
-        "response": ""
+        "response": "",
+        "chat_history": []
     }
     
     # Run the graph
@@ -127,9 +142,9 @@ def run_rag(query: str, system_prompt: str) -> str:
 
 # Example usage
 if __name__ == "__main__":
-    query = "Give me the companies based in Spain"
+    query = "How risky is the market in Spain?"
     print(f"Query: {query}")
-    system_prompt = "You are a helpful assistant that answers questions based on the provided context."
+    system_prompt = "You are a supply chain expert. You are given a question and you do RAG to answer it"
     
     response = run_rag(query, system_prompt)
     print(response) 
