@@ -93,6 +93,12 @@ Now provide your evaluation:
             confidence_score = 0.8 if is_answered else 0.4
             feedback = response.content
         
+        answer_tries = state["answer_tries"] + 1
+        MAX_ANSWER_TRIES = 5
+        if answer_tries >= MAX_ANSWER_TRIES:
+            is_answered = True
+            feedback = "The maximum number of tries has been reached."
+        
         # Update conversation history
         updated_history = conversation_history + [
             {"role": "assistant", "content": f"Evaluation: {evaluation}"}
@@ -103,12 +109,30 @@ Now provide your evaluation:
             is_answered=is_answered,
             confidence_score=confidence_score,
             feedback=evaluation,
-            conversation_history=updated_history
+            conversation_history=updated_history,
+            answer_tries=answer_tries
         )
 
         print("is answered", is_answered)
         print("confidence score", confidence_score)
         print("feedback", feedback)
+
+        # Generate report if ending
+        if is_answered:
+            final_state = {
+                "query": original_query,
+                "orchestrated_query": orchestrated_query,
+                "response": synthesized_response,
+                "evaluation": {
+                    "is_answered": is_answered,
+                    "confidence_score": confidence_score,
+                    "feedback": feedback
+                },
+                "conversation_history": updated_history,
+                "answer_tries": answer_tries
+            }
+
+            json.dump(final_state, open("final_state.json", "w"))
 
         # Update state
         new_state = state.copy()
