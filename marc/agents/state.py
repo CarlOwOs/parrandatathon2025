@@ -11,4 +11,5 @@ class AgentState(TypedDict):
     retrieval_plan: Optional[Dict[str, Any]]
     is_answered: Optional[bool]
     confidence_score: Optional[float]
+    answer_tries: Optional[int]
 

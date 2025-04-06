@@ -2,6 +2,8 @@ from typing import Dict, Any, List, Tuple, Optional
 from langchain_openai import ChatOpenAI
 from langgraph.graph import Graph, StateGraph, END
 from pydantic import BaseModel, Field
+from IPython.display import Image, display
+
 
 from .base_node import create_base_node, BaseNodeInput, BaseNodeOutput
 from .prompt_enhancer import create_prompt_enhancer, PromptEnhancerInput, PromptEnhancerOutput
@@ -88,6 +90,12 @@ def create_agent_graph(
     
     # Compile the graph
     app = workflow.compile()
+
+    # # Get the graph object
+    # graph = app.get_graph()
+
+    # # Save it to a PNG file
+    # graph.draw_png("output_graph.png")
     
     return app
 
@@ -104,7 +112,8 @@ def process_query(
     # Initialize state with the correct field name
     initial_state = AgentState(
         query=query,  # Changed from original_query to query
-        conversation_history=conversation_history
+        conversation_history=conversation_history,
+        answer_tries=0,
     )
     
     # Run the graph

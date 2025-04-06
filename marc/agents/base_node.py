@@ -11,6 +11,7 @@ class BaseNodeInput(BaseModel):
         default_factory=list,
         description="History of the conversation"
     )
+    answer_tries: int = Field(description="Times the model has tried to generate an answer.")
 
 class BaseNodeOutput(BaseModel):
     """Output from the base node."""
