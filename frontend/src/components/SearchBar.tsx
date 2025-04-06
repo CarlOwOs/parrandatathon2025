@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FiSend, FiCpu, FiBriefcase } from 'react-icons/fi';
+import { FiSend, FiCpu, FiBriefcase, FiMapPin } from 'react-icons/fi';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -31,6 +31,7 @@ const SearchBar: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [useReasoning, setUseReasoning] = useState(false);
   const [useCompanySearch, setUseCompanySearch] = useState(false);
+  const [useLocationSearch, setUseLocationSearch] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -57,6 +58,8 @@ const SearchBar: React.FC = () => {
         endpoint = '/api/query/agent';
       } else if (useCompanySearch) {
         endpoint = '/api/query/company';
+      } else if (useLocationSearch) {
+        endpoint = '/api/query/geo';
       }
 
       const result = await fetch(endpoint, {
@@ -162,7 +165,26 @@ const SearchBar: React.FC = () => {
           <button
             type="button"
             onClick={() => {
+              setUseLocationSearch(!useLocationSearch);
+              setUseCompanySearch(false);
+              setUseReasoning(false);
+            }}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
+              useLocationSearch 
+                ? 'bg-accent text-black' 
+                : 'bg-secondary text-white hover:bg-secondary/80'
+            } transition-colors`}
+            title="Toggle Location Search Mode"
+          >
+            <FiMapPin size={18} />
+            <span className="text-sm font-medium">Location</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setUseLocationSearch(false);
               setUseCompanySearch(!useCompanySearch);
+              setUseReasoning(false);
             }}
             className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
               useCompanySearch 
@@ -177,6 +199,7 @@ const SearchBar: React.FC = () => {
           <button
             type="button"
             onClick={() => {
+              setUseLocationSearch(false);
               setUseCompanySearch(false);
               setUseReasoning(!useReasoning);
             }}

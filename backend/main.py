@@ -13,6 +13,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.rag_agent import run_rag
 from marc.example import initialize_agent, process_single_query
 from src.exact_matching import company_search
+from src.sql_aggregate_agent_geo import main as geo_search
 
 app = FastAPI()
 
@@ -103,6 +104,25 @@ async def generate_status_updates_company(query: str, system_prompt: str):
             "data": None
         }) + "\n"
 
+async def generate_status_updates_geo(query: str, system_prompt: str):
+    try:
+        # Run the geographic search
+        response = geo_search(query)
+        
+        # Final response
+        yield json.dumps({
+            "status": "completed",
+            "message": "Query processed successfully",
+            "data": {"response": response}
+        }) + "\n"
+        
+    except Exception as e:
+        yield json.dumps({
+            "status": "error",
+            "message": f"Error processing query: {str(e)}",
+            "data": None
+        }) + "\n"
+
 @app.post("/api/query")
 async def process_query_rag(request: QueryRequest):
     """Endpoint using the run_rag method"""
@@ -128,6 +148,14 @@ async def process_query_company(request: QueryRequest):
     """Endpoint using the company_search method for company-specific queries"""
     return StreamingResponse(
         generate_status_updates_company(request.query, request.system_prompt),
+        media_type="text/event-stream"
+    )
+
+@app.post("/api/query/geo")
+async def process_query_geo(request: QueryRequest):
+    """Endpoint using the geographic search method for location-based queries"""
+    return StreamingResponse(
+        generate_status_updates_geo(request.query, request.system_prompt),
         media_type="text/event-stream"
     )
 
