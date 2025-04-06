@@ -2,6 +2,10 @@
 
 This repository contains the backend API for the Parrandatathon 2025 project. The API provides several endpoints for processing different types of queries using various methods.
 
+## Get the data
+
+Please download the [clean dataset](https://drive.switch.ch/index.php/s/pOf2APhmIeUKAGG), [vector database](https://drive.switch.ch/index.php/s/7BaYVL6yJmL1Oof) and [sql database](https://drive.switch.ch/index.php/s/yhvgpfNga0GK6UC).
+
 ## API Endpoints
 
 ### 1. RAG Query Endpoint
