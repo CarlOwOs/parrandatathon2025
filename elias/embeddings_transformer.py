@@ -154,7 +154,7 @@ def main():
     chroma_client = chromadb.PersistentClient(path="chromas/home_chroma_db_hf")
     collection = chroma_client.get_or_create_collection(
         name="home_embedding_db_hf",
-        metadata={"hnsw:space": "cosine"}
+        metadata={"hnsw:space": "cosine", "hnsw:num_threads": 2}
     )
 
     data_dir = Path("data_clean_3")
