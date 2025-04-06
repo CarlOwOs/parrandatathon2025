@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FiSend, FiCpu } from 'react-icons/fi';
+import { FiSend, FiCpu, FiBriefcase } from 'react-icons/fi';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -30,6 +30,7 @@ const SearchBar: React.FC = () => {
   const [isProcessing, setIsProcessing] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
   const [useReasoning, setUseReasoning] = useState(false);
+  const [useCompanySearch, setUseCompanySearch] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -51,7 +52,13 @@ const SearchBar: React.FC = () => {
     try {
       setIsProcessing(true);
 
-      const endpoint = useReasoning ? '/api/query/agent' : '/api/query';
+      let endpoint = '/api/query';
+      if (useReasoning) {
+        endpoint = '/api/query/agent';
+      } else if (useCompanySearch) {
+        endpoint = '/api/query/company';
+      }
+
       const result = await fetch(endpoint, {
         method: 'POST',
         headers: {
@@ -154,7 +161,25 @@ const SearchBar: React.FC = () => {
         <form onSubmit={handleSubmit} className="flex items-center gap-2">
           <button
             type="button"
-            onClick={() => setUseReasoning(!useReasoning)}
+            onClick={() => {
+              setUseCompanySearch(!useCompanySearch);
+            }}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
+              useCompanySearch 
+                ? 'bg-accent text-black' 
+                : 'bg-secondary text-white hover:bg-secondary/80'
+            } transition-colors`}
+            title="Toggle Company Search Mode"
+          >
+            <FiBriefcase size={18} />
+            <span className="text-sm font-medium">Company Name</span>
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setUseCompanySearch(false);
+              setUseReasoning(!useReasoning);
+            }}
             className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
               useReasoning 
                 ? 'bg-accent text-black' 
@@ -169,7 +194,9 @@ const SearchBar: React.FC = () => {
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Ask about suppliers, logistics, or procurement insights..."
+            placeholder={useCompanySearch 
+              ? "Ask about a specific company..." 
+              : "Ask about suppliers, logistics, or procurement insights..."}
             className="flex-1 px-3 py-2 bg-secondary rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent text-sm"
             disabled={isProcessing}
           />

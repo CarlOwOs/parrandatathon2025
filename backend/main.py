@@ -12,6 +12,7 @@ import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.rag_agent import run_rag
 from marc.example import initialize_agent, process_single_query
+from src.exact_matching import company_search
 
 app = FastAPI()
 
@@ -83,6 +84,25 @@ async def generate_status_updates_agent(query: str, system_prompt: str, conversa
             "data": None
         }) + "\n"
 
+async def generate_status_updates_company(query: str, system_prompt: str):
+    try:
+        # Run the company search
+        response = company_search(query, system_prompt)
+        
+        # Final response
+        yield json.dumps({
+            "status": "completed",
+            "message": "Query processed successfully",
+            "data": {"response": response}
+        }) + "\n"
+        
+    except Exception as e:
+        yield json.dumps({
+            "status": "error",
+            "message": f"Error processing query: {str(e)}",
+            "data": None
+        }) + "\n"
+
 @app.post("/api/query")
 async def process_query_rag(request: QueryRequest):
     """Endpoint using the run_rag method"""
@@ -100,6 +120,14 @@ async def process_query_agent(request: QueryRequest):
             request.system_prompt,
             request.conversation_history
         ),
+        media_type="text/event-stream"
+    )
+
+@app.post("/api/query/company")
+async def process_query_company(request: QueryRequest):
+    """Endpoint using the company_search method for company-specific queries"""
+    return StreamingResponse(
+        generate_status_updates_company(request.query, request.system_prompt),
         media_type="text/event-stream"
     )
 
