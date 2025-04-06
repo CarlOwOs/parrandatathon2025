@@ -3,6 +3,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_openai import ChatOpenAI
 from pydantic import BaseModel, Field
 from .state import AgentState
+import json
 
 class EvaluatorInput(BaseModel):
     """Input for the evaluator node."""
@@ -44,9 +45,9 @@ Evaluation criteria:
         synthesized_response = input_data.synthesized_response
         conversation_history = input_data.conversation_history
 
-        print(f"Original Query: {original_query}")
-        print(f"Orchestrated Query: {orchestrated_query}")
-        print(f"Synthesized Response: {synthesized_response}")
+        # print(f"Original Query: {original_query}")
+        # print(f"Orchestrated Query: {orchestrated_query}")
+        # print(f"Synthesized Response: {synthesized_response}")
         
         # Create messages for the LLM
         messages = [
@@ -55,20 +56,42 @@ Evaluation criteria:
 Orchestrated Query: {orchestrated_query}
 Synthesized Response: {synthesized_response}
 
-Please evaluate if the original question has been answered and provide:
+Please evaluate if the original question has been answered.
+Try to be a bit strict on the answer, as we want to ensure the answer is correct.
+Ensure everything is realistic, and be aware of suspicious answers such as repeated addresses, or companies that don't make sense.
+
+Provide:
 1. A yes/no answer
 2. A confidence score (0.0 to 1.0)
-3. Specific feedback on the answer quality""")
+3. Specific feedback on the answer quality
+
+Please respond in **JSON format** like this:
+
+{{
+  "is_answered": true,
+  "confidence_score": 0.85,
+  "feedback": "The answer is accurate and complete."
+}}
+
+Now provide your evaluation:
+""")
         ]
         
         # Get response from LLM
         response = llm.invoke(messages)
         evaluation = response.content
         
-        # Parse the evaluation (in a real implementation, you would use a more robust parsing method)
-        # For now, we'll use simple defaults
-        is_answered = "yes" in evaluation.lower()
-        confidence_score = 0.8 if is_answered else 0.4
+        # Parse the evaluation
+        try:
+            parsed = json.loads(response.content)
+            is_answered = parsed.get("is_answered", False)
+            confidence_score = parsed.get("confidence_score", 0.0)
+            feedback = parsed.get("feedback", "No feedback provided.")
+        except json.JSONDecodeError:
+            # fallback if parsing fails
+            is_answered = "yes" in response.content.lower()
+            confidence_score = 0.8 if is_answered else 0.4
+            feedback = response.content
         
         # Update conversation history
         updated_history = conversation_history + [
@@ -85,7 +108,8 @@ Please evaluate if the original question has been answered and provide:
 
         print("is answered", is_answered)
         print("confidence score", confidence_score)
-        
+        print("feedback", feedback)
+
         # Update state
         new_state = state.copy()
         new_state.update(output.dict())

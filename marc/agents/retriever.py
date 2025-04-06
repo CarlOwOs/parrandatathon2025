@@ -43,14 +43,13 @@ def retrieve_docs(state: AgentState, chroma_client: chromadb.PersistentClient, l
         n_results=10
     )
 
-    print("The results are: ", results)
-    
     # Extract document texts
     # retrieved_docs = results["documents"][0] if results["documents"] else []
     
     ids = results["ids"][0] if results["ids"] else []
     documents = results["documents"][0] if results["documents"] else []
     scores = results["distances"][0] if results["distances"] else []
+    print("The results are: ", ids)
 
     results = {
         "ids": ids,
@@ -62,8 +61,11 @@ def retrieve_docs(state: AgentState, chroma_client: chromadb.PersistentClient, l
 
 class RetrievalResult(BaseModel):
     """Model for a single retrieval result."""
-    query: str = Field(description="The original user query")
-    retrieval_results: List[Dict[str, Any]] = Field(description="Results from all retrieval methods")
+    source: str = Field(description="Source of the information (RAG or SQL)")
+    content: Any = Field(description="The retrieved content")
+    relevance_score: Optional[float] = Field(description="Relevance score for RAG results")
+    # query: str = Field(description="The original user query")
+    # retrieval_results: List[Dict[str, Any]] = Field(description="Results from all retrieval methods")
     # source: str = Field(description="Source of the information (RAG or SQL)")
     # content: Any = Field(description="The retrieved content")
     # relevance_score: Optional[float] = Field(description="Relevance score for RAG results")
@@ -137,7 +139,7 @@ Your role is to:
                     retrieval_results.append(
                         RetrievalResult(
                             source="RAG",
-                            content=doc.page_content,
+                            content=doc,
                             relevance_score=float(score)
                         )
                     )

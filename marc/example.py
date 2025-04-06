@@ -32,8 +32,7 @@ def main():
     # ]
 
     queries = [
-        "Which are the top 5 companies for compost manufacturing in India?",
-        "From these which is the largest?"
+        "What companies provide in-house mortgage financing specifically for new construction customers, ensuring timely closings as homes are built?"
     ]
     
     # Process each query
