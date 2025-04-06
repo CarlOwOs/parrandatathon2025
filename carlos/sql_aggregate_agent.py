@@ -12,6 +12,7 @@ import sqlite3
 import pandas as pd
 import random
 import sys
+import ast
 
 dotenv.load_dotenv()
 
@@ -44,70 +45,69 @@ def load_keywords_from_dbs() -> Dict[str, List[str]]:
     
     return keyword_dict
 
-def get_relevant_keywords(query: str, keyword_dict: Dict[str, List[str]]) -> List[str]:
+def get_relevant_keywords(query: str, category: str, keywords) -> List[str]:
     llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
     
     prompt = ChatPromptTemplate.from_template(
-        "Given the user query: {query}\n\n"
-        "Return a list of 10 keywords that are most relevant to the query that are in the following dictionary: {keyword_dict}.\n"
-        "Think about what a supply chain manager would search for. Be thorough and detailed.\n"
-        "It is of utmost importance that the keywords you choose are in the dictionary.\n"
-        "Return the keywords in a list format, one per line, without any additional text or punctuation.\n"
+        f"Given the user query: {query} and the category: {category}\n\n"
+        f"Return the keyword that is most relevant to the query among the ones in {keywords}.\n"
+        "Think about what a supply chain manager would search for. The keyword should be specific to the category and relevant to the query.\n"
+        "It is of utmost importance that the keyword you choose is in the dictionary.\n"
+        "Less is more. Include as few keywords as possible to answer the query.\n"
         "If the query contains a city, country, or region, make sure to include only 1 or 2 keywords for the country and region in the list of keywords.\n"
         "Remember to only include keywords present in the dictionary.\n"
-        "Don't use dashes or other punctuation in the keywords. Only 10 words separated by commas."
+        "Don't use dashes or other punctuation in the keywords."
+        "Return the keyword in a list format, without any additional text or punctuation:\n"
+        "keyword1"
     )
     
     chain = prompt | llm
-    response = chain.invoke({"query": query, "keyword_dict": keyword_dict})
+    response = chain.invoke({"query": query, "category": category, "keywords": keywords})
     
     # Extract content from AIMessage into a list of strings. The output is a string with the keywords separated by commas.
-    llm_keywords = response.content.strip().split(',')
-    # Clean up any empty strings and whitespace
-    llm_keywords = [k.strip() for k in llm_keywords if k.strip()]
+    llm_keyword = response.content.strip()
     
-    return llm_keywords
+    print(f"LLM keyword: {llm_keyword}")
+    
+    return ast.literal_eval(llm_keyword)[0]
 
-def fetch_urls_for_keywords(llm_keywords: List[str]) -> List[Tuple[str, str, str]]:
+def fetch_urls_for_keywords(llm_categories, relevant_keywords: Dict[str, str]) -> List[Tuple[str, str, str]]:
     """
     Fetch URLs from all databases for the given keywords.
     Returns a list of tuples (category, keyword, url)
     """
     results = []
+
+    for category in llm_categories:
+        keyword = relevant_keywords[category]
+
+        # Create the SQL query with parameterized placeholders
+        sql_query = """
+        SELECT DISTINCT k.keyword, k.url 
+        FROM keywords k
+        WHERE k.keyword = ?
+        """
     
-    # Create the SQL query with parameterized placeholders
-    placeholders = ','.join(['?' for _ in llm_keywords])
-    sql_query = f"""
-    SELECT DISTINCT k.keyword, k.url 
-    FROM keywords k
-    WHERE k.keyword IN ({placeholders})
-    """
-    
-    print("SQL query: ", sql_query)
-    print("Keywords being searched:", llm_keywords)
-    
-    for file in os.listdir(sql_directory):
-        if file.endswith(".db"):
-            category = file.split(".")[0]
-            db_path = os.path.join(sql_directory, file)
-            
-            with sqlite3.connect(db_path) as conn:
-                cursor = conn.cursor()
-                cursor.execute(sql_query, llm_keywords) # this gives the llm keywords as a list of strings.
-                for keyword, url in cursor.fetchall():
-                    results.append((category, keyword, url))
+        for file in os.listdir(sql_directory):
+            if file.endswith(".db"):
+                current_category = file.split(".")[0]
+                if current_category != category:
+                    continue
+                    
+                db_path = os.path.join(sql_directory, file)
+                
+                with sqlite3.connect(db_path) as conn:
+                    cursor = conn.cursor()
+                    cursor.execute(sql_query, (keyword,))
+                    for keyword, url in cursor.fetchall():
+                        results.append((category, keyword, url))
     
     return results
 
-if __name__ == "__main__":
+def main(query: str):
 
     # Load all keywords from databases
     keyword_dict = load_keywords_from_dbs()    
-    # Example query
-    query = "How many logistics companies are in the US?"
-    
-    # Get relevant keywords
-    relevant_keywords = get_relevant_keywords(query, keyword_dict)
 
     random5_per_category = {category: random.sample(keyword_dict[category], 5) for category in keyword_dict}
     
@@ -116,21 +116,21 @@ if __name__ == "__main__":
     prompt = ChatPromptTemplate.from_template(f"""
         Given the user query: {query}
 
-        Return the categories that are most relevant to the query from the following categories: {keyword_dict}
+        Return the categories that are most relevant to the query from the following categories: {list(keyword_dict)}
 
         Some examples of values in each category are:
-        - industries: {random5_per_category["industries"]}
-        - services: {random5_per_category["services"]}
-        - materials: {random5_per_category["materials"]}
-        - products: {random5_per_category["products"]}
-        - technology: {random5_per_category["technology"]}
-        - logistics: {random5_per_category["logistics"]}
-        - procurement: {random5_per_category["procurement"]}
-        - city: {random5_per_category["city"]}
-        - country: {random5_per_category["country"]}
-        - continent: {random5_per_category["continent"]}
-        - capacity risk: {random5_per_category["capacity risk"]}
-        - geopolitical risk: {random5_per_category["geopolitical risk"]}
+        - industries: {random5_per_category['industries']}
+        - services: {random5_per_category['services']}
+        - materials: {random5_per_category['materials']}
+        - products: {random5_per_category['products']}
+        - technology: {random5_per_category['technology']}
+        - logistics: {random5_per_category['logistics']}
+        - procurement: {random5_per_category['procurement']}
+        - city: {random5_per_category['city']}
+        - country: {random5_per_category['country']}
+        - continent: {random5_per_category['continent']}
+        - capacity risk: {random5_per_category['capacity risk']}
+        - geopolitical risk: {random5_per_category['geopolitical risk']}
 
         Think about what a supply chain manager would search for. Be thorough and detailed.
         It is of utmost importance that the categories you choose are in the dictionary.
@@ -150,24 +150,28 @@ if __name__ == "__main__":
     current_try = 0
     
     while current_try < max_retries:
-        response = chain.invoke({"query": query, "keyword_dict": keyword_dict})
+        response = chain.invoke({
+            "query": query, 
+            "keyword_dict": keyword_dict,
+            "random5_per_category": random5_per_category
+        })
         
         # Extract content from AIMessage into a list of strings. The output is a string with the categories separated by commas.
-        llm_categories = response.content.strip().split(',')
-        # Clean up any empty strings and whitespace
+        llm_categories = ast.literal_eval(response.content.strip())
         llm_categories = [k.strip() for k in llm_categories if k.strip()]
         
         # Validate that all categories exist in keyword_dict
         valid_categories = []
         invalid_categories = []
         for category in llm_categories:
+            print(category)
             if category in keyword_dict:
                 valid_categories.append(category)
             else:
                 invalid_categories.append(category)
         
         if invalid_categories:
-            print(f"\nWarning: The following categories were returned but do not exist in the database:")
+            print("\nWarning: The following categories were returned but do not exist in the database:")
             for category in invalid_categories:
                 print(f"- {category}")
             print(f"\nAttempt {current_try + 1} of {max_retries}")
@@ -181,18 +185,18 @@ if __name__ == "__main__":
                     Return the categories that are most relevant to the query from the following categories: {list(keyword_dict)}
 
                     Some examples of values in each category are:
-                    - industries: {random5_per_category["industries"]}
-                    - services: {random5_per_category["services"]}
-                    - materials: {random5_per_category["materials"]}
-                    - products: {random5_per_category["products"]}
-                    - technology: {random5_per_category["technology"]}
-                    - logistics: {random5_per_category["logistics"]}
-                    - procurement: {random5_per_category["procurement"]}
-                    - city: {random5_per_category["city"]}
-                    - country: {random5_per_category["country"]}
-                    - continent: {random5_per_category["continent"]}
-                    - capacity risk: {random5_per_category["capacity risk"]}
-                    - geopolitical risk: {random5_per_category["geopolitical risk"]}
+                    - industries: {random5_per_category['industries']}
+                    - services: {random5_per_category['services']}
+                    - materials: {random5_per_category['materials']}
+                    - products: {random5_per_category['products']}
+                    - technology: {random5_per_category['technology']}
+                    - logistics: {random5_per_category['logistics']}
+                    - procurement: {random5_per_category['procurement']}
+                    - city: {random5_per_category['city']}
+                    - country: {random5_per_category['country']}
+                    - continent: {random5_per_category['continent']}
+                    - capacity risk: {random5_per_category['capacity risk']}
+                    - geopolitical risk: {random5_per_category['geopolitical risk']}
 
                     Think about what a supply chain manager would search for. Be thorough and detailed.
                     It is of utmost importance that the categories you choose are in the dictionary.
@@ -229,7 +233,12 @@ if __name__ == "__main__":
     
     if not llm_categories:
         print("\nWarning: No valid categories were found for the query after multiple attempts. Please check the query and try again.")
-        sys.exit(1)
+        return "No valid categories were found for the query after multiple attempts. Please check the query and try again."
+
+    relevant_keywords = {}
+    print(f"Categories: {llm_categories}")
+    for category in llm_categories:
+        relevant_keywords[category] = get_relevant_keywords(query, category, keyword_dict[category])
 
     # Fetch matching URLs
     matching_urls = fetch_urls_for_keywords(llm_categories, relevant_keywords)
@@ -238,3 +247,7 @@ if __name__ == "__main__":
     for category, keyword, url in matching_urls:
         print(f"Category: {category}, Keyword: {keyword}, URL: {url}")
 
+
+if __name__ == "__main__":
+    query = "How companies doing supply chain management are in the US?"
+    main(query)
