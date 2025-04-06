@@ -22,4 +22,6 @@ dependencies = [
     "numpy>=1.26.4",
     "fuzzywuzzy>=0.18.0",
     "python-levenshtein>=0.27.1",
+    "llama-stack>=0.2.0",
+    "faiss-cpu>=1.10.0",
 ]

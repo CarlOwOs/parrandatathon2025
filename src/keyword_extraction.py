@@ -192,7 +192,7 @@ async def main():
             batch = json_files[i:i + BATCH_SIZE]
             await process_batch(session, batch, output_dir)
             # Add a small delay between batches to respect rate limits
-            await asyncio.sleep(1)
+            # await asyncio.sleep(1)
 
 if __name__ == "__main__":
     asyncio.run(main())
