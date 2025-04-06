@@ -34,26 +34,7 @@ class StatusResponse(BaseModel):
 
 async def generate_status_updates(query: str, system_prompt: str):
     try:
-        # Step 1: Initializing
-        yield json.dumps({
-            "status": "processing",
-            "message": "Initializing RAG pipeline...",
-            "data": {"step": 1, "total_steps": 3}
-        }) + "\n"
-        
-        # Step 2: Retrieving documents
-        yield json.dumps({
-            "status": "processing",
-            "message": "Retrieving relevant documents...",
-            "data": {"step": 2, "total_steps": 3}
-        }) + "\n"
-        
-        # Step 3: Generating response
-        yield json.dumps({
-            "status": "processing",
-            "message": "Generating response...",
-            "data": {"step": 3, "total_steps": 3}
-        }) + "\n"
+
         
         # Run the RAG pipeline
         response = run_rag(query, system_prompt)
