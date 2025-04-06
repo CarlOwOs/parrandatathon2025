@@ -11,7 +11,7 @@ load_dotenv()
 
 # Initialize ChromaDB
 chroma_client = chromadb.PersistentClient(
-    path="chromas/home_chroma_db_openai",
+    path="data/home_chroma_db",
 )
 
 # Initialize OpenAI models

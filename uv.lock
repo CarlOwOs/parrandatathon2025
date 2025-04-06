@@ -109,6 +109,15 @@ wheels = [
 ]
 
 [[package]]
+name = "asyncio"
+version = "3.4.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/da/54/054bafaf2c0fb8473d423743e191fcdf49b2c1fd5e9af3524efbe097bafd/asyncio-3.4.3.tar.gz", hash = "sha256:83360ff8bc97980e4ff25c964c7bd3923d333d177aa4f7fb736b019f26c7cb41", size = 204411 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/22/74/07679c5b9f98a7cb0fc147b1ef1cc1853bc07a4eb9cb5731e24732c5f773/asyncio-3.4.3-py3-none-any.whl", hash = "sha256:c4d18b22701821de07bd6aea8b53d21449ec0ec5680645e5317062ea21817d2d", size = 101767 },
+]
+
+[[package]]
 name = "attrs"
 version = "25.3.0"
 source = { registry = "https://pypi.org/simple" }
@@ -1741,8 +1750,10 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "aiohttp" },
+    { name = "asyncio" },
     { name = "chromadb" },
     { name = "faiss-cpu" },
+    { name = "fastapi" },
     { name = "fuzzywuzzy" },
     { name = "h5py" },
     { name = "langchain-openai" },
@@ -1753,19 +1764,23 @@ dependencies = [
     { name = "openai" },
     { name = "pandas" },
     { name = "pyarrow" },
+    { name = "pydantic" },
     { name = "python-dotenv" },
     { name = "python-levenshtein" },
     { name = "rank-bm25" },
     { name = "scikit-learn" },
     { name = "torch" },
     { name = "transformers" },
+    { name = "uvicorn" },
 ]
 
 [package.metadata]
 requires-dist = [
     { name = "aiohttp", specifier = ">=3.11.16" },
+    { name = "asyncio", specifier = ">=3.4.3" },
     { name = "chromadb", specifier = ">=1.0.0" },
     { name = "faiss-cpu", specifier = ">=1.10.0" },
+    { name = "fastapi", specifier = ">=0.115.9" },
     { name = "fuzzywuzzy", specifier = ">=0.18.0" },
     { name = "h5py", specifier = ">=3.13.0" },
     { name = "langchain-openai", specifier = ">=0.3.12" },
@@ -1776,12 +1791,14 @@ requires-dist = [
     { name = "openai", specifier = ">=1.12.0" },
     { name = "pandas", specifier = ">=2.2.0" },
     { name = "pyarrow", specifier = ">=15.0.0" },
+    { name = "pydantic", specifier = ">=2.11.2" },
     { name = "python-dotenv", specifier = ">=1.0.0" },
     { name = "python-levenshtein", specifier = ">=0.27.1" },
     { name = "rank-bm25", specifier = ">=0.2.2" },
     { name = "scikit-learn", specifier = ">=1.6.1" },
     { name = "torch", specifier = ">=2.6.0" },
     { name = "transformers", specifier = ">=4.50.3" },
+    { name = "uvicorn", specifier = ">=0.34.0" },
 ]
 
 [[package]]
