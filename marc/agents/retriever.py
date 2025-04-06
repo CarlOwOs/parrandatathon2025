@@ -11,7 +11,7 @@ from langchain_openai import OpenAIEmbeddings
 import os
 
 chroma_client = chromadb.PersistentClient(
-    path="C:\\Users\\m50038244\\parrandatathon\\data\\home_chroma_db",
+    path="data/home_chroma_db",
 )
 
 def retrieve_docs(state: AgentState, chroma_client: chromadb.PersistentClient, llm: ChatOpenAI, embeddings: OpenAIEmbeddings) -> AgentState:

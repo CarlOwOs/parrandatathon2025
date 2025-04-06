@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
 import asyncio
 import json
 import sys
@@ -11,6 +11,7 @@ import os
 # Add the parent directory to the Python path
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from src.rag_agent import run_rag
+from marc.example import initialize_agent, process_single_query
 
 app = FastAPI()
 
@@ -26,16 +27,18 @@ app.add_middleware(
 class QueryRequest(BaseModel):
     query: str
     system_prompt: Optional[str] = "You are a helpful assistant that answers questions based on the provided context."
+    conversation_history: Optional[List[Dict]] = None
 
 class StatusResponse(BaseModel):
     status: str
     message: str
     data: Optional[dict] = None
 
-async def generate_status_updates(query: str, system_prompt: str):
-    try:
+# Initialize the agent graph
+agent_graph = initialize_agent()
 
-        
+async def generate_status_updates_rag(query: str, system_prompt: str):
+    try:
         # Run the RAG pipeline
         response = run_rag(query, system_prompt)
         
@@ -53,10 +56,50 @@ async def generate_status_updates(query: str, system_prompt: str):
             "data": None
         }) + "\n"
 
+async def generate_status_updates_agent(query: str, system_prompt: str, conversation_history: Optional[List[Dict]] = None):
+    try:
+        # Process the query with the agent
+        result = process_single_query(
+            graph=agent_graph,
+            query=query,
+            conversation_history=conversation_history
+        )
+        
+        # Final response
+        yield json.dumps({
+            "status": "completed",
+            "message": "Query processed successfully",
+            "data": {
+                "response": result["response"],
+                "conversation_history": result["conversation_history"],
+                "response_time": result["response_time"]
+            }
+        }) + "\n"
+        
+    except Exception as e:
+        yield json.dumps({
+            "status": "error",
+            "message": f"Error processing query: {str(e)}",
+            "data": None
+        }) + "\n"
+
 @app.post("/api/query")
-async def process_query(request: QueryRequest):
+async def process_query_rag(request: QueryRequest):
+    """Endpoint using the run_rag method"""
     return StreamingResponse(
-        generate_status_updates(request.query, request.system_prompt),
+        generate_status_updates_rag(request.query, request.system_prompt),
+        media_type="text/event-stream"
+    )
+
+@app.post("/api/query/agent")
+async def process_query_agent(request: QueryRequest):
+    """Endpoint using the agent method from example.py"""
+    return StreamingResponse(
+        generate_status_updates_agent(
+            request.query,
+            request.system_prompt,
+            request.conversation_history
+        ),
         media_type="text/event-stream"
     )
 

@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { FiSend } from 'react-icons/fi';
+import { FiSend, FiCpu } from 'react-icons/fi';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -8,10 +8,14 @@ interface Message {
   isUser: boolean;
 }
 
-const ThinkingAnimation = () => (
+const ThinkingAnimation = ({ useReasoning }: { useReasoning: boolean }) => (
   <div className="flex justify-start">
     <div className="bg-secondary text-white rounded-lg p-3 max-w-[80%] flex items-center space-x-2">
-      <div className="text-sm">Hunting for the best answer</div>
+      <div className="text-sm">
+        {useReasoning 
+          ? "Hunting very very hard for the best answer" 
+          : "Hunting for the best answer"}
+      </div>
       <div className="flex space-x-1">
         <div className="w-1 h-1 bg-accent rounded-full animate-[bounce_1.4s_infinite]" style={{ animationDelay: '0s' }} />
         <div className="w-1 h-1 bg-accent rounded-full animate-[bounce_1.4s_infinite]" style={{ animationDelay: '0.2s' }} />
@@ -25,6 +29,7 @@ const SearchBar: React.FC = () => {
   const [query, setQuery] = useState('');
   const [isProcessing, setIsProcessing] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);
+  const [useReasoning, setUseReasoning] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -46,7 +51,8 @@ const SearchBar: React.FC = () => {
     try {
       setIsProcessing(true);
 
-      const result = await fetch('/api/query', {
+      const endpoint = useReasoning ? '/api/query/agent' : '/api/query';
+      const result = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -137,7 +143,7 @@ const SearchBar: React.FC = () => {
                 </div>
               </div>
             ))}
-            {isProcessing && <ThinkingAnimation />}
+            {isProcessing && <ThinkingAnimation useReasoning={useReasoning} />}
             <div ref={messagesEndRef} className="h-1" />
           </div>
         </div>
@@ -146,6 +152,19 @@ const SearchBar: React.FC = () => {
       {/* Input area - fixed at the bottom */}
       <div className="border-t border-gray-700 bg-primary p-3">
         <form onSubmit={handleSubmit} className="flex items-center gap-2">
+          <button
+            type="button"
+            onClick={() => setUseReasoning(!useReasoning)}
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
+              useReasoning 
+                ? 'bg-accent text-black' 
+                : 'bg-secondary text-white hover:bg-secondary/80'
+            } transition-colors`}
+            title="Toggle Reasoning Mode"
+          >
+            <FiCpu size={18} />
+            <span className="text-sm font-medium">DeepSupplyThink</span>
+          </button>
           <input
             type="text"
             value={query}
