@@ -114,37 +114,59 @@ def main(query: str):
     for category, keyword, url in matching_urls:
         print(f"Category: {category}, Keyword: {keyword}, URL: {url}")
 
-    # Create a counter for each level
-    level_counts = {category: 0 for category in llm_categories}
-    level_locations = {category: set() for category in llm_categories}
+    # Create a counter for each level and track individual locations
+    level_counts = {category: {} for category in llm_categories}
     
-    # Count URLs and collect locations for each level
+    # Count URLs for each individual location
     for category, keyword, _ in matching_urls:
-        level_counts[category] += 1
-        level_locations[category].add(keyword)
+        if keyword not in level_counts[category]:
+            level_counts[category][keyword] = 0
+        level_counts[category][keyword] += 1
     
     # Create a formatted response message
     response_parts = []
-    for category, count in level_counts.items():
-        if count > 0:
-            locations = ", ".join(sorted(level_locations[category]))
-            response_parts.append(f"{count} companies in {locations} ({category} level)")
+    for category in llm_categories:
+        if level_counts[category]:
+            if category == "city":
+                # For cities, show individual counts
+                city_counts = []
+                for city, count in sorted(level_counts[category].items()):
+                    city_counts.append(f"{city}: {count} companies")
+                response_parts.append("Cities:\n" + "\n".join(f"  • {city_count}" for city_count in city_counts))
+            else:
+                # For other levels, show aggregate
+                total = sum(level_counts[category].values())
+                locations = ", ".join(sorted(level_counts[category].keys()))
+                response_parts.append(f"{total} companies in {locations} ({category} level)")
         else:
             response_parts.append(f"No companies found at the {category} level")
     
-    total_urls = sum(level_counts.values())
+    total_urls = sum(sum(counts.values()) for counts in level_counts.values())
     
     # Create a more natural and professional response
     if total_urls == 0:
         response = "I couldn't find any companies matching your search criteria."
     else:
         response = "Here's what I found:\n\n"
-        response += "\n\n".join(f"• {part}" for part in response_parts)
+        response += "\n\n".join(response_parts)
+    
+    # Format the response using LLM while preserving numerical data
+    formatting_prompt = ChatPromptTemplate.from_template(
+        "You are an assistant that formats text to be delivered to a user."
+        "Please improve the formatting and presentation of the following company location data while keeping all numbers exactly as they are. "
+        "Make sure to properly capitalize city, country, and continent names. "
+        "Make the response more professional and well-structured. Do not add any content other than the formatted response. "
+        "Add an introductory sentence saying 'Here's what I found:'"
+        "Here's the data:\n\n{data}"
+    )
+    
+    formatting_chain = formatting_prompt | llm
+    formatted_response = formatting_chain.invoke({"data": response})
     
     print("\nResponse to LLM:")
-    print(response)
+    print(formatted_response.content)
     
-    return response
+    return formatted_response.content
 
 if __name__ == "__main__":
     query = "How companies are in the US?"

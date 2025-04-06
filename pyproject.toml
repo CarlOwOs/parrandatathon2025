@@ -28,4 +28,5 @@ dependencies = [
     "uvicorn>=0.34.0",
     "pydantic>=2.11.2",
     "asyncio>=3.4.3",
+    "ipython>=9.0.2",
 ]
