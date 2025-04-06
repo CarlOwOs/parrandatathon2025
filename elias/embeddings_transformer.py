@@ -7,9 +7,7 @@ import torch
 import torch.nn.functional as F
 from torch.utils.data import Dataset, DataLoader
 from transformers import AutoTokenizer, AutoModel
-import chromadb
-from chromadb.config import Settings
-from collections import defaultdict
+import numpy as np
 import time
 
 # Mean Pooling - Take attention mask into account for correct averaging
@@ -59,8 +57,22 @@ def process_company_document(data: Dict, company_name: str) -> List[Dict]:
         })
     return documents
 
-def process_batch(texts: List[str], metadata: List[Tuple[str, str]], batch_id: int, tokenizer, model, collection):
-    """Process a batch of documents using the model."""
+def save_embedding(embedding: np.ndarray, company: str, url: str, output_dir: Path):
+    """Save embedding as numpy array in structured directory format."""
+    # Create company directory if it doesn't exist
+    company_dir = output_dir / company
+    company_dir.mkdir(parents=True, exist_ok=True)
+    
+    # Create a safe filename from the URL
+    safe_filename = url.replace('/', '_').replace(':', '_').replace('.', '_')
+    if len(safe_filename) > 200:  # Limit filename length
+        safe_filename = safe_filename[:200]
+    
+    # Save the embedding
+    np.save(company_dir / f"{safe_filename}.npy", embedding)
+
+def process_batch(texts: List[str], metadata: List[Tuple[str, str]], batch_id: int, tokenizer, model, output_dir: Path):
+    """Process a batch of documents using the model and save embeddings."""
     if not texts:
         return
     
@@ -68,9 +80,8 @@ def process_batch(texts: List[str], metadata: List[Tuple[str, str]], batch_id: i
     start_time = time.time()
     
     try:
-        # Tokenize sentences in smaller chunks to avoid memory issues
+        # Tokenize sentences
         print("Starting tokenization...")
-        #max_length = 1024  # Limit token length
         encoded_input = tokenizer(
             texts,
             padding=True,
@@ -102,39 +113,16 @@ def process_batch(texts: List[str], metadata: List[Tuple[str, str]], batch_id: i
         print("Normalizing embeddings...")
         sentence_embeddings = F.normalize(sentence_embeddings, p=2, dim=1)
         
-        # Convert embeddings to list format for ChromaDB
-        print("Converting embeddings to list format...")
-        embeddings_list = sentence_embeddings.cpu().numpy().tolist()
-        process_time = time.time()
-        print(f"Embedding processing completed in {process_time - model_time:.2f} seconds")
+        # Convert embeddings to numpy and save
+        print("Saving embeddings...")
+        embeddings_np = sentence_embeddings.cpu().numpy()
         
-        # Prepare data for ChromaDB
-        print("Preparing data for ChromaDB...")
-        chroma_data = defaultdict(lambda: {"ids": [], "embeddings": [], "documents": [], "metadatas": []})
+        for i, ((company, url), embedding) in enumerate(zip(metadata, embeddings_np)):
+            save_embedding(embedding, company, url, output_dir)
         
-        for i, ((company, url), embedding) in enumerate(zip(metadata, embeddings_list)):
-            chroma_data[company]["ids"].append(f"{company}_{batch_id}_{i}")
-            chroma_data[company]["embeddings"].append(embedding)
-            chroma_data[company]["documents"].append(texts[i])
-            chroma_data[company]["metadatas"].append({"url": url, "company": company})
-        
-        # Store in ChromaDB by company
-        print("Storing in ChromaDB...")
-        for company, data in chroma_data.items():
-            try:
-                collection.add(
-                    ids=data["ids"],
-                    embeddings=data["embeddings"],
-                    documents=data["documents"],
-                    metadatas=data["metadatas"]
-                )
-                print(f"Stored {len(data['ids'])} documents for {company}")
-            except Exception as e:
-                print(f"Error storing documents for {company}: {str(e)}")
-        
-        chroma_time = time.time()
-        print(f"ChromaDB storage completed in {chroma_time - process_time:.2f} seconds")
-        print(f"Total batch processing time: {chroma_time - start_time:.2f} seconds")
+        save_time = time.time()
+        print(f"Embedding saving completed in {save_time - model_time:.2f} seconds")
+        print(f"Total batch processing time: {save_time - start_time:.2f} seconds")
         
     except Exception as e:
         print(f"Error processing batch {batch_id}: {str(e)}")
@@ -149,13 +137,9 @@ def main():
     model = AutoModel.from_pretrained('sentence-transformers/all-MiniLM-L6-v2')
     model.eval()  # Set model to evaluation mode
 
-    # Initialize ChromaDB
-    print("Initializing ChromaDB...")
-    chroma_client = chromadb.PersistentClient(path="chromas/home_chroma_db_hf")
-    collection = chroma_client.get_or_create_collection(
-        name="home_embedding_db_hf",
-        metadata={"hnsw:space": "cosine", "hnsw:num_threads": 2}
-    )
+    # Create output directory for embeddings
+    output_dir = Path("embeddings")
+    output_dir.mkdir(exist_ok=True)
 
     data_dir = Path("data_clean_3")
     batch_size = 512
@@ -192,7 +176,7 @@ def main():
     # Process batches
     print("Starting batch processing...")
     for batch_id, (texts, metadata) in enumerate(tqdm(dataloader, desc="Processing batches")):
-        process_batch(texts, metadata, batch_id, tokenizer, model, collection)
+        process_batch(texts, metadata, batch_id, tokenizer, model, output_dir)
 
 if __name__ == "__main__":
     main()

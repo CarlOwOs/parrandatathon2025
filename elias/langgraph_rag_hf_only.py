@@ -12,14 +12,9 @@ from sentence_transformers import SentenceTransformer
 # Load environment variables
 load_dotenv()
 
-# Initialize ChromaDB client
+# Initialize ChromaDB
 chroma_client = chromadb.PersistentClient(
-    path="chromas/home_chroma_db_hf",
-    settings=chromadb.Settings(
-        anonymized_telemetry=False,
-        allow_reset=True,
-        is_persistent=True
-    )
+    path="chromas/home_chroma_db_hf_first_only"
 )
 
 # Initialize models
@@ -39,17 +34,11 @@ class AgentState(TypedDict):
 
 # Define the nodes
 def retrieve_docs(state: AgentState) -> AgentState:
-    """Retrieve relevant documents from ChromaDB collection."""
+    """Retrieve relevant documents from ChromaDB."""
     try:
-        # Get the existing collection
-        collection = chroma_client.get_or_create_collection(
-            name="home_embedding_db_hf",
-            metadata={"hnsw:space": "cosine", "hnsw:num_threads": 2},
-            #collection_metadata={}
-        )#collection(name="home_embedding_db_hf")
-            
+        collection = chroma_client.get_collection(name="company_first_pages")
     except Exception as e:
-        print(f"Error handling collection: {e}")
+        print(f"Error getting collection: {e}")
         raise
     
     # Get embeddings for the query
@@ -72,8 +61,7 @@ def generate_response(state: AgentState) -> AgentState:
     prompt = ChatPromptTemplate.from_messages([
         ("system", state["system_prompt"]),
         MessagesPlaceholder(variable_name="chat_history"),
-        ("human", """Answer the following question using the provided context. 
-        The context comes from multiple knowledge bases, so make sure to synthesize information from all sources.
+        ("human", """Answer the following question using the provided context.
         
         Question: {query}
         
@@ -145,25 +133,3 @@ if __name__ == "__main__":
         print(company_url, response)
         recalls.append(company_url in response)
         print(sum(recalls) / len(recalls))
-    # # Step 1: Load the broken collection, maybe in an environment with more threads
-    # collection = chroma_client.get_collection("home_embedding_db_hf")
-
-    # # Step 2: Dump all data
-    # all_docs = collection.get(include=["documents", "embeddings", "metadatas", "ids"])
-
-    # # Step 3: Create a new collection with safe config
-    # chroma_client.delete_collection("home_embedding_db_hf_safe")  # optional new name
-    # new_collection = chroma_client.create_collection(
-    #     name="home_embedding_db_hf_safe",
-    #     metadata={"hnsw:space": "cosine"},
-    #     collection_metadata={"hnsw:num_threads": 2},
-    #     embedding_function=your_embedder,
-    # )
-
-    # # Step 4: Reinsert
-    # new_collection.add(
-    #     documents=all_docs["documents"],
-    #     embeddings=all_docs["embeddings"],
-    #     metadatas=all_docs["metadatas"],
-    #     ids=all_docs["ids"],
-    # )
